@@ -70,6 +70,8 @@ public class DocListActivity extends ListActivity {
 				if(listAdapter.isFolder(f)) {
 					folderStack.add(f.getId());
 					asyncLoad();
+				} else {
+					//download this file and open it in a viewer
 				}
 				
 			}
