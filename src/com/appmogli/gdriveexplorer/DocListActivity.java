@@ -6,14 +6,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.DialogInterface.OnClickListener;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
+import com.appmogli.gdriveexplorer.HttpDownloadManager.FileDownloadProgressListener;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.services.GoogleKeyInitializer;
@@ -29,6 +38,7 @@ public class DocListActivity extends ListActivity {
 
 	public static final String KEY_ROOT_FOLDER_ID = "rootFolderId";
 	public static final String KEY_AUTH_TOKEN = "authToken";
+	protected static final String TAG = "DocListActivity";
 
 	private DocListAdapter listAdapter = null;
 	private ProgressDialog progressDialog = null;
@@ -60,22 +70,140 @@ public class DocListActivity extends ListActivity {
 		listAdapter = new DocListAdapter(this);
 		getListView().setAdapter(listAdapter);
 		asyncLoad();
-		
+
 		getListView().setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> adapterView, View view, int position,
-					long id) {
+			public void onItemClick(AdapterView<?> adapterView, View view,
+					int position, long id) {
 				File f = (File) listAdapter.getItem(position);
-				if(listAdapter.isFolder(f)) {
+				if (listAdapter.isFolder(f)) {
 					folderStack.add(f.getId());
 					asyncLoad();
 				} else {
-					//download this file and open it in a viewer
+					// download this file and open it in a viewer
+					//showDownloadOptions(f);
 				}
-				
+
 			}
 		});
+	}
+
+	private void showDownloadOptions(final File f) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("Choose Format");
+		final Map<String, String> exportLinks = f.getExportLinks();
+		if (exportLinks != null) {
+			final String[] types = new String[exportLinks.size()];
+			int i = 0;
+			for (String exportType : exportLinks.keySet()) {
+				types[i++] = ExportTypeMappings.getReadableString(exportType);
+			}
+
+			builder.setItems(types, new OnClickListener() {
+
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					String exportType = ExportTypeMappings
+							.getExportTypeString(types[which]);
+					String downloadLink = exportLinks.get(exportType);
+					downloadAndViewFile(downloadLink, f.getTitle() + "."
+							+ types[which], exportType);
+				}
+			});
+			builder.setNegativeButton("Cancel", new OnClickListener() {
+
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.dismiss();
+				}
+			});
+			builder.show();
+
+		} else {
+			downloadAndViewFile(f.getDownloadUrl(), f.getTitle(),
+					f.getMimeType());
+
+		}
+	}
+
+	private void downloadAndViewFile(final String downloadUrl, String fileName,
+			final String mimeType) {
+		Log.d(TAG, "donwload link is:" + downloadUrl);
+		Log.d(TAG, "File name is:" + fileName);
+		java.io.File cacheDir = getExternalCacheDir();
+		final java.io.File toFile = new java.io.File(cacheDir, fileName);
+		new AsyncTask<Void, Integer, Boolean>() {
+			final ProgressDialog fileDownloadProgressDialog = new ProgressDialog(
+					DocListActivity.this);
+			
+			protected void onPreExecute() {
+				fileDownloadProgressDialog.setIndeterminate(false);
+				fileDownloadProgressDialog.setMax(100);
+				
+			};
+			@Override
+			protected Boolean doInBackground(Void... params) {
+				try {
+					toFile.createNewFile();
+
+					final HttpDownloadManager downloader = new HttpDownloadManager(
+							downloadUrl, toFile.toString());
+					downloader.setListener(new FileDownloadProgressListener() {
+
+						@Override
+						public void downloadProgress(long bytesRead, long totalBytes) {
+							float progress = (float) bytesRead * 100
+									/ (float) totalBytes;
+							publishProgress(Math.round(progress));
+
+						}
+
+						@Override
+						public void downloadFinished() {
+							
+						}
+
+						@Override
+						public void downloadFailedWithError(Exception e) {
+							
+							
+						}
+					});
+					return downloader.download();
+					
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
+				return false;
+			}
+			
+			protected  void onProgressUpdate(Integer[] values) {
+				fileDownloadProgressDialog.setProgress(values[0]);
+			};
+			
+			protected void onPostExecute(Boolean result) {
+				fileDownloadProgressDialog.cancel();
+				
+				if(result) {
+					Intent viewIntent = new Intent();
+					viewIntent.setAction(Intent.ACTION_VIEW);
+					viewIntent.setDataAndType(
+							Uri.parse("file://" + toFile.toString()), mimeType);
+					startActivity(viewIntent);
+				} else {
+					//
+					Toast.makeText(DocListActivity.this,
+							"Error downloading file", Toast.LENGTH_SHORT)
+							.show();
+				}
+				
+			};
+			
+		}.execute();
+		
+		
 	}
 
 	private void asyncLoad() {
@@ -106,9 +234,9 @@ public class DocListActivity extends ListActivity {
 										child.getId());
 								File f = fileRequest.execute();
 								Boolean trashed = f.getExplicitlyTrashed();
-								if(trashed == null) {
+								if (trashed == null) {
 									trashed = false;
-								} 
+								}
 								if (f != null && !trashed) {
 									result.add(f);
 								}
@@ -116,7 +244,7 @@ public class DocListActivity extends ListActivity {
 							}
 							rootToFilesMap.put(rootFolderId, result);
 							return result;
-							
+
 						}
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
@@ -131,10 +259,10 @@ public class DocListActivity extends ListActivity {
 
 			protected void onPostExecute(List<File> result) {
 				dialog.cancel();
-				if(result != null) {
+				if (result != null) {
 					listAdapter.setNewData(result);
 				} else {
-					
+
 				}
 			};
 		}.execute();
@@ -147,15 +275,15 @@ public class DocListActivity extends ListActivity {
 			listAdapter.onDestroy();
 		}
 	}
-	
+
 	@Override
 	public void onBackPressed() {
 		folderStack.remove(folderStack.size() - 1);
-		if(folderStack.isEmpty()) {
+		if (folderStack.isEmpty()) {
 			super.onBackPressed();
 		} else {
 			asyncLoad();
 		}
-		
+
 	}
 }
