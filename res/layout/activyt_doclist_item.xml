@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:orientation="horizontal" 
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/activity_doclist_item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/folder" 
+        android:padding="10dp"/>
+	<View android:layout_width="1dp"
+	    android:layout_height="match_parent"
+	    android:background="#000"/>
+    <TextView
+        android:id="@+id/activity_doclist_item_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:text="Medium Text"
+        android:gravity="left"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+	<View
+	    android:id="@+id/activity_doclist_item_rightbar" 
+	    android:layout_width="1dp"
+	    android:layout_height="match_parent"
+	    android:background="#000"/>
+    <ImageView
+        android:id="@+id/activity_doclist_item_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/nav_next" 
+        android:padding="10dp"/>
+
+</LinearLayout>
