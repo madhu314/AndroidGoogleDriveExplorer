@@ -82,7 +82,7 @@ public class DocListActivity extends ListActivity {
 					asyncLoad();
 				} else {
 					// download this file and open it in a viewer
-					//showDownloadOptions(f);
+					showDownloadOptions(f);
 				}
 
 			}
@@ -108,7 +108,7 @@ public class DocListActivity extends ListActivity {
 							.getExportTypeString(types[which]);
 					String downloadLink = exportLinks.get(exportType);
 					downloadAndViewFile(downloadLink, f.getTitle() + "."
-							+ types[which], exportType);
+							+ types[which], exportType, f.getFileSize() == null ? 0 : f.getFileSize());
 				}
 			});
 			builder.setNegativeButton("Cancel", new OnClickListener() {
@@ -122,13 +122,13 @@ public class DocListActivity extends ListActivity {
 
 		} else {
 			downloadAndViewFile(f.getDownloadUrl(), f.getTitle(),
-					f.getMimeType());
+					f.getMimeType(), f.getFileSize());
 
 		}
 	}
 
 	private void downloadAndViewFile(final String downloadUrl, String fileName,
-			final String mimeType) {
+			final String mimeType, final long totalBytes) {
 		Log.d(TAG, "donwload link is:" + downloadUrl);
 		Log.d(TAG, "File name is:" + fileName);
 		java.io.File cacheDir = getExternalCacheDir();
@@ -148,7 +148,7 @@ public class DocListActivity extends ListActivity {
 					toFile.createNewFile();
 
 					final HttpDownloadManager downloader = new HttpDownloadManager(
-							downloadUrl, toFile.toString());
+							downloadUrl, toFile.toString(), totalBytes);
 					downloader.setListener(new FileDownloadProgressListener() {
 
 						@Override
@@ -170,7 +170,7 @@ public class DocListActivity extends ListActivity {
 							
 						}
 					});
-					return downloader.download();
+					return downloader.download(service);
 					
 				} catch (IOException e) {
 					e.printStackTrace();

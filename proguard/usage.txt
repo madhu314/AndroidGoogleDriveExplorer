@@ -619,6 +619,29 @@ android.support.v4.widget.SimpleCursorAdapter
 android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter
 android.support.v4.widget.SimpleCursorAdapter$ViewBinder
 com.appmogli.gdriveexplorer.BuildConfig
+com.appmogli.gdriveexplorer.ClientCredentials:
+    public static final java.lang.String KEY
+com.appmogli.gdriveexplorer.DocListActivity:
+    public static final java.lang.String KEY_ROOT_FOLDER_ID
+    public static final java.lang.String KEY_AUTH_TOKEN
+    protected static final java.lang.String TAG
+    93:128:private void showDownloadOptions(com.google.api.services.drive.model.File)
+    132:207:private void downloadAndViewFile(java.lang.String,java.lang.String,java.lang.String)
+    130:130:static synthetic void access$3(com.appmogli.gdriveexplorer.DocListActivity,java.lang.String,java.lang.String,java.lang.String)
+com.appmogli.gdriveexplorer.DocListActivity$2
+com.appmogli.gdriveexplorer.DocListActivity$3
+com.appmogli.gdriveexplorer.DocListActivity$4
+com.appmogli.gdriveexplorer.DocListActivity$4$1
+com.appmogli.gdriveexplorer.DriveSample:
+    private static final java.lang.String TAG
+    private static final java.lang.String AUTH_TOKEN_TYPE
+    private static final int MENU_ACCOUNTS
+    private static final int REQUEST_AUTHENTICATE
+    static final java.lang.String PREF_ACCOUNT_NAME
+    static final java.lang.String PREF_AUTH_TOKEN
+com.appmogli.gdriveexplorer.ExportTypeMappings
+com.appmogli.gdriveexplorer.HttpDownloadManager
+com.appmogli.gdriveexplorer.HttpDownloadManager$FileDownloadProgressListener
 com.appmogli.gdriveexplorer.R
 com.appmogli.gdriveexplorer.R$attr
 com.appmogli.gdriveexplorer.R$drawable
@@ -627,13 +650,50 @@ com.appmogli.gdriveexplorer.R$layout
 com.appmogli.gdriveexplorer.R$menu
 com.appmogli.gdriveexplorer.R$string
 com.appmogli.gdriveexplorer.R$style
-com.google.api.client.auth.jsontoken.JsonWebSignature
-com.google.api.client.auth.jsontoken.JsonWebSignature$Header
+com.google.api.client.auth.jsontoken.JsonWebSignature:
+    private final byte[] signatureBytes
+    private final byte[] signedContentBytes
+    64:67:public JsonWebSignature(com.google.api.client.auth.jsontoken.JsonWebSignature$Header,com.google.api.client.auth.jsontoken.JsonWebToken$Payload,byte[],byte[])
+    214:214:public com.google.api.client.auth.jsontoken.JsonWebSignature$Header getHeader()
+    219:219:public final byte[] getSignatureBytes()
+    224:224:public final byte[] getSignedContentBytes()
+    236:236:public static com.google.api.client.auth.jsontoken.JsonWebSignature parse(com.google.api.client.json.JsonFactory,java.lang.String)
+    241:241:public static com.google.api.client.auth.jsontoken.JsonWebSignature$Parser parser(com.google.api.client.json.JsonFactory)
+    48:48:public bridge synthetic com.google.api.client.auth.jsontoken.JsonWebToken$Header getHeader()
+com.google.api.client.auth.jsontoken.JsonWebSignature$Header:
+    125:125:public final java.lang.String getAlgorithm()
+    143:143:public java.lang.String getJwkUrl()
+    152:153:public com.google.api.client.auth.jsontoken.JsonWebSignature$Header setJwkUrl(java.lang.String)
+    161:161:public java.lang.String getKeyId()
+    169:170:public com.google.api.client.auth.jsontoken.JsonWebSignature$Header setKeyId(java.lang.String)
+    179:179:public java.lang.String getX509Url()
+    188:189:public com.google.api.client.auth.jsontoken.JsonWebSignature$Header setX509Url(java.lang.String)
+    198:198:public java.lang.String getX509Thumbprint()
+    207:208:public com.google.api.client.auth.jsontoken.JsonWebSignature$Header setX509Thumbprint(java.lang.String)
 com.google.api.client.auth.jsontoken.JsonWebSignature$Parser
-com.google.api.client.auth.jsontoken.JsonWebToken
-com.google.api.client.auth.jsontoken.JsonWebToken$Header
-com.google.api.client.auth.jsontoken.JsonWebToken$Payload
-com.google.api.client.auth.jsontoken.RsaSHA256Signer
+com.google.api.client.auth.jsontoken.JsonWebToken:
+    private final com.google.api.client.auth.jsontoken.JsonWebToken$Header header
+    private final com.google.api.client.auth.jsontoken.JsonWebToken$Payload payload
+    44:47:public JsonWebToken(com.google.api.client.auth.jsontoken.JsonWebToken$Header,com.google.api.client.auth.jsontoken.JsonWebToken$Payload)
+    323:323:public com.google.api.client.auth.jsontoken.JsonWebToken$Header getHeader()
+    334:334:public com.google.api.client.auth.jsontoken.JsonWebToken$Payload getPayload()
+com.google.api.client.auth.jsontoken.JsonWebToken$Header:
+    67:67:public final java.lang.String getType()
+com.google.api.client.auth.jsontoken.JsonWebToken$Payload:
+    165:165:public java.lang.Long getExpirationTimeSeconds()
+    182:182:public java.lang.Long getNotBeforeTimeSeconds()
+    190:191:public com.google.api.client.auth.jsontoken.JsonWebToken$Payload setNotBeforeTimeSeconds(java.lang.Long)
+    199:199:public java.lang.Long getIssuedAtTimeSeconds()
+    216:216:public java.lang.String getIssuer()
+    233:233:public java.lang.String getAudience()
+    249:249:public java.lang.String getPrincipal()
+    265:265:public java.lang.String getJwtId()
+    272:273:public com.google.api.client.auth.jsontoken.JsonWebToken$Payload setJwtId(java.lang.String)
+    281:281:public java.lang.String getType()
+    289:290:public com.google.api.client.auth.jsontoken.JsonWebToken$Payload setType(java.lang.String)
+    307:308:public boolean isValidTime(long)
+com.google.api.client.auth.jsontoken.RsaSHA256Signer:
+    55:56:private RsaSHA256Signer()
 com.google.api.client.auth.oauth.AbstractOAuthGetToken
 com.google.api.client.auth.oauth.OAuthAuthorizeTemporaryTokenUrl
 com.google.api.client.auth.oauth.OAuthCallbackUrl
@@ -650,31 +710,69 @@ com.google.api.client.auth.oauth2.AuthorizationCodeRequestUrl
 com.google.api.client.auth.oauth2.AuthorizationCodeResponseUrl
 com.google.api.client.auth.oauth2.AuthorizationCodeTokenRequest
 com.google.api.client.auth.oauth2.AuthorizationRequestUrl
-com.google.api.client.auth.oauth2.BearerToken
-com.google.api.client.auth.oauth2.BearerToken$AuthorizationHeaderAccessMethod
+com.google.api.client.auth.oauth2.BearerToken:
+    static final java.lang.String PARAM_NAME
+    33:99:public BearerToken()
+    135:135:public static com.google.api.client.auth.oauth2.Credential$AccessMethod formEncodedBodyAccessMethod()
+    145:145:public static com.google.api.client.auth.oauth2.Credential$AccessMethod queryParameterAccessMethod()
+com.google.api.client.auth.oauth2.BearerToken$AuthorizationHeaderAccessMethod:
+    static final java.lang.String HEADER_PREFIX
 com.google.api.client.auth.oauth2.BearerToken$FormEncodedBodyAccessMethod
 com.google.api.client.auth.oauth2.BearerToken$QueryParameterAccessMethod
 com.google.api.client.auth.oauth2.BrowserClientRequestUrl
 com.google.api.client.auth.oauth2.ClientParametersAuthentication
-com.google.api.client.auth.oauth2.Credential
-com.google.api.client.auth.oauth2.Credential$AccessMethod
+com.google.api.client.auth.oauth2.Credential:
+    176:177:public Credential(com.google.api.client.auth.oauth2.Credential$AccessMethod)
+    344:344:public final com.google.api.client.auth.oauth2.Credential$AccessMethod getMethod()
+    378:382:public final java.lang.String getRefreshToken()
+    414:418:public final java.lang.Long getExpirationTimeMilliseconds()
+    483:483:public final com.google.api.client.http.HttpRequestInitializer getRequestInitializer()
+    594:594:public final java.util.List getRefreshListeners()
 com.google.api.client.auth.oauth2.Credential$Builder
-com.google.api.client.auth.oauth2.CredentialRefreshListener
 com.google.api.client.auth.oauth2.CredentialStore
 com.google.api.client.auth.oauth2.CredentialStoreRefreshListener
 com.google.api.client.auth.oauth2.MemoryCredentialStore
 com.google.api.client.auth.oauth2.MemoryPersistedCredential
-com.google.api.client.auth.oauth2.RefreshTokenRequest
-com.google.api.client.auth.oauth2.TokenErrorResponse
-com.google.api.client.auth.oauth2.TokenRequest
-com.google.api.client.auth.oauth2.TokenRequest$1
-com.google.api.client.auth.oauth2.TokenRequest$1$1
-com.google.api.client.auth.oauth2.TokenResponse
-com.google.api.client.auth.oauth2.TokenResponseException
+com.google.api.client.auth.oauth2.RefreshTokenRequest:
+    109:109:public varargs com.google.api.client.auth.oauth2.RefreshTokenRequest setScopes(java.lang.String[])
+    114:114:public com.google.api.client.auth.oauth2.RefreshTokenRequest setScopes(java.lang.Iterable)
+    129:129:public final java.lang.String getRefreshToken()
+    79:79:public bridge synthetic com.google.api.client.auth.oauth2.TokenRequest setScopes(java.lang.Iterable)
+    79:79:public bridge synthetic com.google.api.client.auth.oauth2.TokenRequest setScopes(java.lang.String[])
+com.google.api.client.auth.oauth2.TokenErrorResponse:
+    66:66:public final java.lang.String getError()
+    82:83:public com.google.api.client.auth.oauth2.TokenErrorResponse setError(java.lang.String)
+    91:91:public final java.lang.String getErrorDescription()
+    104:105:public com.google.api.client.auth.oauth2.TokenErrorResponse setErrorDescription(java.lang.String)
+    114:114:public final java.lang.String getErrorUri()
+    128:129:public com.google.api.client.auth.oauth2.TokenErrorResponse setErrorUri(java.lang.String)
+com.google.api.client.auth.oauth2.TokenRequest:
+    102:102:public final com.google.api.client.http.HttpTransport getTransport()
+    107:107:public final com.google.api.client.json.JsonFactory getJsonFactory()
+    112:112:public final com.google.api.client.http.HttpRequestInitializer getRequestInitializer()
+    130:130:public final com.google.api.client.http.HttpExecuteInterceptor getClientAuthentication()
+    161:161:public final com.google.api.client.http.GenericUrl getTokenServerUrl()
+    184:184:public final java.lang.String getScopes()
+    201:201:public varargs com.google.api.client.auth.oauth2.TokenRequest setScopes(java.lang.String[])
+    218:219:public com.google.api.client.auth.oauth2.TokenRequest setScopes(java.lang.Iterable)
+    228:228:public final java.lang.String getGrantType()
+com.google.api.client.auth.oauth2.TokenResponse:
+    81:82:public com.google.api.client.auth.oauth2.TokenResponse setAccessToken(java.lang.String)
+    90:90:public final java.lang.String getTokenType()
+    103:104:public com.google.api.client.auth.oauth2.TokenResponse setTokenType(java.lang.String)
+    125:126:public com.google.api.client.auth.oauth2.TokenResponse setExpiresInSeconds(java.lang.Long)
+    147:148:public com.google.api.client.auth.oauth2.TokenResponse setRefreshToken(java.lang.String)
+    155:155:public final java.lang.String getScope()
+    167:168:public com.google.api.client.auth.oauth2.TokenResponse setScope(java.lang.String)
+com.google.api.client.auth.oauth2.TokenResponseException:
+    private static final long serialVersionUID
 com.google.api.client.auth.openidconnect.IdTokenResponse
 com.google.api.client.auth.security.PrivateKeys
-com.google.api.client.extensions.android.AndroidUtils
-com.google.api.client.extensions.android.http.AndroidHttp
+com.google.api.client.extensions.android.AndroidUtils:
+    45:48:public static void checkMinimumSdkLevel(int)
+    50:51:private AndroidUtils()
+com.google.api.client.extensions.android.http.AndroidHttp:
+    54:55:private AndroidHttp()
 com.google.api.client.extensions.android.json.AndroidJsonFactory
 com.google.api.client.extensions.android.json.AndroidJsonGenerator
 com.google.api.client.extensions.android.json.AndroidJsonGenerator$StringNumber
@@ -682,8 +780,8 @@ com.google.api.client.extensions.android.json.AndroidJsonParser
 com.google.api.client.extensions.android.json.AndroidJsonParser$1
 com.google.api.client.googleapis.GoogleHeaders
 com.google.api.client.googleapis.GoogleUrl
-com.google.api.client.googleapis.MethodOverride
-com.google.api.client.googleapis.MethodOverride$1
+com.google.api.client.googleapis.MethodOverride:
+    70:72:public MethodOverride(java.util.EnumSet)
 com.google.api.client.googleapis.auth.clientlogin.AuthKeyValueParser
 com.google.api.client.googleapis.auth.clientlogin.ClientLogin
 com.google.api.client.googleapis.auth.clientlogin.ClientLogin$ErrorInfo
@@ -696,7 +794,13 @@ com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeTokenRequest
 com.google.api.client.googleapis.auth.oauth2.GoogleBrowserClientRequestUrl
 com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets
 com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets$Details
-com.google.api.client.googleapis.auth.oauth2.GoogleCredential
+com.google.api.client.googleapis.auth.oauth2.GoogleCredential:
+    225:228:protected GoogleCredential(com.google.api.client.auth.oauth2.Credential$AccessMethod,com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,java.lang.String,com.google.api.client.http.HttpExecuteInterceptor,com.google.api.client.http.HttpRequestInitializer,java.util.List,java.lang.String,java.lang.String,java.security.PrivateKey,java.lang.String)
+    267:284:protected GoogleCredential(com.google.api.client.auth.oauth2.Credential$AccessMethod,com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,java.lang.String,com.google.api.client.http.HttpExecuteInterceptor,com.google.api.client.http.HttpRequestInitializer,java.util.List,java.lang.String,java.lang.String,java.security.PrivateKey,java.lang.String,com.google.api.client.util.Clock)
+    353:353:public final java.lang.String getServiceAccountId()
+    361:361:public final java.lang.String getServiceAccountScopes()
+    369:369:public final java.security.PrivateKey getServiceAccountPrivateKey()
+    377:377:public final java.lang.String getServiceAccountUser()
 com.google.api.client.googleapis.auth.oauth2.GoogleCredential$Builder
 com.google.api.client.googleapis.auth.oauth2.GoogleIdToken
 com.google.api.client.googleapis.auth.oauth2.GoogleIdToken$Payload
@@ -715,83 +819,292 @@ com.google.api.client.googleapis.batch.BatchUnparsedResponse$FakeLowLevelHttpRes
 com.google.api.client.googleapis.batch.BatchUnparsedResponse$FakeResponseHttpTransport
 com.google.api.client.googleapis.batch.MultipartMixedContent
 com.google.api.client.googleapis.batch.json.JsonBatchCallback
-com.google.api.client.googleapis.extensions.android.accounts.GoogleAccountManager
-com.google.api.client.googleapis.json.GoogleJsonError
-com.google.api.client.googleapis.json.GoogleJsonError$ErrorInfo
+com.google.api.client.googleapis.extensions.android.accounts.GoogleAccountManager:
+    public static final java.lang.String ACCOUNT_TYPE
+com.google.api.client.googleapis.json.GoogleJsonError:
+    48:48:public static com.google.api.client.googleapis.json.GoogleJsonError parse(com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpResponse)
+    195:195:public final java.util.List getErrors()
+    204:205:public final void setErrors(java.util.List)
+    213:213:public final int getCode()
+    222:223:public final void setCode(int)
+    231:231:public final java.lang.String getMessage()
+    240:241:public final void setMessage(java.lang.String)
+com.google.api.client.googleapis.json.GoogleJsonError$ErrorInfo:
+    90:90:public final java.lang.String getDomain()
+    99:100:public final void setDomain(java.lang.String)
+    108:108:public final java.lang.String getReason()
+    117:118:public final void setReason(java.lang.String)
+    126:126:public final java.lang.String getMessage()
+    135:136:public final void setMessage(java.lang.String)
+    145:145:public final java.lang.String getLocation()
+    155:156:public final void setLocation(java.lang.String)
+    164:164:public final java.lang.String getLocationType()
+    173:174:public final void setLocationType(java.lang.String)
 com.google.api.client.googleapis.json.GoogleJsonErrorContainer
-com.google.api.client.googleapis.json.GoogleJsonResponseException
+com.google.api.client.googleapis.json.GoogleJsonResponseException:
+    private static final long serialVersionUID
+    78:78:public final com.google.api.client.googleapis.json.GoogleJsonError getDetails()
 com.google.api.client.googleapis.json.GoogleJsonRpcHttpTransport
 com.google.api.client.googleapis.json.GoogleJsonRpcHttpTransport$Builder
 com.google.api.client.googleapis.json.JsonCContent
 com.google.api.client.googleapis.json.JsonCParser
-com.google.api.client.googleapis.media.MediaHttpDownloader
-com.google.api.client.googleapis.media.MediaHttpDownloader$DownloadState
+com.google.api.client.googleapis.media.MediaHttpDownloader:
+    public static final int MAXIMUM_CHUNK_SIZE
+    private com.google.api.client.googleapis.media.MediaHttpDownloaderProgressListener progressListener
+    private long mediaContentLength
+    private long bytesDownloaded
+    140:189:public void download(com.google.api.client.http.GenericUrl,java.io.OutputStream)
+    201:204:private long getNextByteIndex(java.lang.String)
+    223:224:public com.google.api.client.googleapis.media.MediaHttpDownloader setBytesDownloaded(long)
+    235:241:private void setMediaContentLength(java.lang.String)
+    250:250:public boolean isDirectDownloadEnabled()
+    260:261:public com.google.api.client.googleapis.media.MediaHttpDownloader setDirectDownloadEnabled(boolean)
+    269:270:public com.google.api.client.googleapis.media.MediaHttpDownloader setProgressListener(com.google.api.client.googleapis.media.MediaHttpDownloaderProgressListener)
+    277:277:public com.google.api.client.googleapis.media.MediaHttpDownloaderProgressListener getProgressListener()
+    286:287:public com.google.api.client.googleapis.media.MediaHttpDownloader setBackOffPolicyEnabled(boolean)
+    296:296:public boolean isBackOffPolicyEnabled()
+    301:301:public com.google.api.client.http.HttpTransport getTransport()
+    313:315:public com.google.api.client.googleapis.media.MediaHttpDownloader setChunkSize(int)
+    323:323:public int getChunkSize()
+    332:332:public long getNumBytesDownloaded()
+    341:345:private void updateStateAndNotifyListener(com.google.api.client.googleapis.media.MediaHttpDownloader$DownloadState)
+    353:353:public com.google.api.client.googleapis.media.MediaHttpDownloader$DownloadState getDownloadState()
+    363:363:public double getProgress()
 com.google.api.client.googleapis.media.MediaHttpDownloaderProgressListener
 com.google.api.client.googleapis.media.MediaHttpUploader
 com.google.api.client.googleapis.media.MediaHttpUploader$UploadState
 com.google.api.client.googleapis.media.MediaHttpUploaderProgressListener
 com.google.api.client.googleapis.media.MediaUploadExponentialBackOffPolicy
-com.google.api.client.googleapis.services.GoogleClient
-com.google.api.client.googleapis.services.GoogleClient$Builder
-com.google.api.client.googleapis.services.GoogleKeyInitializer
+com.google.api.client.googleapis.services.GoogleClient:
+    62:63:public GoogleClient(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,java.lang.String)
+    82:83:public GoogleClient(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,java.lang.String,java.lang.String,com.google.api.client.http.HttpRequestInitializer)
+    148:156:protected GoogleClient(com.google.api.client.http.HttpTransport,com.google.api.client.http.json.JsonHttpRequestInitializer,com.google.api.client.http.HttpRequestInitializer,com.google.api.client.json.JsonFactory,com.google.api.client.json.JsonObjectParser,java.lang.String,java.lang.String,java.lang.String)
+    234:234:public com.google.api.client.googleapis.batch.BatchRequest batch()
+    257:267:public com.google.api.client.googleapis.batch.BatchRequest batch(com.google.api.client.http.HttpRequestInitializer)
+    273:274:protected com.google.api.client.http.HttpResponse executeUnparsed(com.google.api.client.http.HttpMethod,com.google.api.client.http.GenericUrl,java.lang.Object)
+    288:288:public final boolean getSuppressPatternChecks()
+com.google.api.client.googleapis.services.GoogleClient$Builder:
+    324:325:public com.google.api.client.googleapis.services.GoogleClient$Builder setSuppressPatternChecks(boolean)
+    339:340:protected GoogleClient$Builder(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.GenericUrl)
+    362:371:public com.google.api.client.googleapis.services.GoogleClient build()
+    300:300:public bridge synthetic com.google.api.client.http.json.JsonHttpClient build()
 com.google.api.client.googleapis.xml.atom.AtomPatchContent
 com.google.api.client.googleapis.xml.atom.AtomPatchRelativeToOriginalContent
 com.google.api.client.googleapis.xml.atom.GoogleAtom
 com.google.api.client.googleapis.xml.atom.GoogleAtom$FieldsMask
 com.google.api.client.googleapis.xml.atom.MultiKindFeedParser
-com.google.api.client.http.AbstractHttpContent
-com.google.api.client.http.AbstractInputStreamContent
-com.google.api.client.http.BackOffPolicy
+com.google.api.client.http.AbstractHttpContent:
+    80:80:public final com.google.api.client.http.HttpMediaType getMediaType()
+    94:95:public com.google.api.client.http.AbstractHttpContent setMediaType(com.google.api.client.http.HttpMediaType)
+com.google.api.client.http.AbstractInputStreamContent:
+    98:98:public final boolean getCloseInputStream()
+    108:109:public com.google.api.client.http.AbstractInputStreamContent setEncoding(java.lang.String)
+    129:130:public com.google.api.client.http.AbstractInputStreamContent setCloseInputStream(boolean)
+com.google.api.client.http.BackOffPolicy:
+    public static final long STOP
 com.google.api.client.http.BasicAuthentication
-com.google.api.client.http.ByteArrayContent
-com.google.api.client.http.ByteCountingOutputStream
-com.google.api.client.http.EmptyContent
+com.google.api.client.http.ByteArrayContent:
+    124:124:public com.google.api.client.http.ByteArrayContent setEncoding(java.lang.String)
+    134:134:public com.google.api.client.http.ByteArrayContent setCloseInputStream(boolean)
+    46:46:public bridge synthetic com.google.api.client.http.AbstractInputStreamContent setCloseInputStream(boolean)
+    46:46:public bridge synthetic com.google.api.client.http.AbstractInputStreamContent setEncoding(java.lang.String)
 com.google.api.client.http.ExponentialBackOffPolicy
 com.google.api.client.http.ExponentialBackOffPolicy$Builder
 com.google.api.client.http.FileContent
-com.google.api.client.http.GZipContent
-com.google.api.client.http.GenericUrl
-com.google.api.client.http.HttpContent
-com.google.api.client.http.HttpExecuteInterceptor
-com.google.api.client.http.HttpHeaders
+com.google.api.client.http.GZipContent:
+    70:71:public com.google.api.client.http.GZipContent setMediaType(com.google.api.client.http.HttpMediaType)
+    30:30:public bridge synthetic com.google.api.client.http.AbstractHttpContent setMediaType(com.google.api.client.http.HttpMediaType)
+com.google.api.client.http.GenericUrl:
+    155:155:public final java.lang.String getScheme()
+    164:165:public final void setScheme(java.lang.String)
+    173:173:public java.lang.String getHost()
+    182:183:public final void setHost(java.lang.String)
+    191:191:public int getPort()
+    200:202:public final void setPort(int)
+    211:211:public java.util.List getPathParts()
+    231:232:public void setPathParts(java.util.List)
+    249:250:public final void setFragment(java.lang.String)
+    317:324:public java.lang.Object getFirst(java.lang.String)
+    334:343:public java.util.Collection getAll(java.lang.String)
+    353:359:public java.lang.String getRawPath()
+    383:393:public void appendRawPath(java.lang.String)
+com.google.api.client.http.HttpHeaders:
+    169:169:public final java.lang.String getAccept()
+    178:179:public final void setAccept(java.lang.String)
+    187:187:public final java.lang.String getAcceptEncoding()
+    200:201:public final void setAcceptEncoding(java.lang.String)
+    227:227:public final java.lang.String getCacheControl()
+    236:237:public final void setCacheControl(java.lang.String)
+    245:245:public final java.lang.String getContentEncoding()
+    254:255:public final void setContentEncoding(java.lang.String)
+    263:263:public final java.lang.Long getContentLength()
+    272:273:public final void setContentLength(java.lang.Long)
+    281:281:public final java.lang.String getContentMD5()
+    290:291:public final void setContentMD5(java.lang.String)
+    299:299:public final java.lang.String getContentRange()
+    308:309:public final void setContentRange(java.lang.String)
+    326:327:public final void setContentType(java.lang.String)
+    335:335:public final java.lang.String getCookie()
+    344:345:public final void setCookie(java.lang.String)
+    353:353:public final java.lang.String getDate()
+    362:363:public final void setDate(java.lang.String)
+    371:371:public final java.lang.String getETag()
+    380:381:public final void setETag(java.lang.String)
+    389:389:public final java.lang.String getExpires()
+    398:399:public final void setExpires(java.lang.String)
+    407:407:public final java.lang.String getIfModifiedSince()
+    416:417:public final void setIfModifiedSince(java.lang.String)
+    425:425:public final java.lang.String getIfMatch()
+    434:435:public final void setIfMatch(java.lang.String)
+    443:443:public final java.lang.String getIfNoneMatch()
+    452:453:public final void setIfNoneMatch(java.lang.String)
+    461:461:public final java.lang.String getIfUnmodifiedSince()
+    470:471:public final void setIfUnmodifiedSince(java.lang.String)
+    479:479:public final java.lang.String getLastModified()
+    488:489:public final void setLastModified(java.lang.String)
+    506:507:public final void setLocation(java.lang.String)
+    515:515:public final java.lang.String getMimeVersion()
+    524:525:public final void setMimeVersion(java.lang.String)
+    533:533:public final java.lang.String getRange()
+    542:543:public final void setRange(java.lang.String)
+    551:551:public final java.lang.String getRetryAfter()
+    560:561:public final void setRetryAfter(java.lang.String)
+    587:587:public final java.lang.String getAuthenticate()
+    596:597:public final void setAuthenticate(java.lang.String)
+    606:610:public final void setBasicAuthentication(java.lang.String,java.lang.String)
+    669:670:public static void serializeHeaders(com.google.api.client.http.HttpHeaders,java.lang.StringBuilder,java.util.logging.Logger,com.google.api.client.http.LowLevelHttpRequest)
+    702:703:public static void serializeHeadersForMultipartRequests(com.google.api.client.http.HttpHeaders,java.lang.StringBuilder,java.util.logging.Logger,java.io.Writer)
+    797:805:public final void fromHttpHeaders(com.google.api.client.http.HttpHeaders)
 com.google.api.client.http.HttpHeaders$HeaderParsingFakeLevelHttpRequest
-com.google.api.client.http.HttpHeaders$ParseHeaderState
-com.google.api.client.http.HttpMediaType
-com.google.api.client.http.HttpMethod
-com.google.api.client.http.HttpParser
-com.google.api.client.http.HttpRequest
-com.google.api.client.http.HttpRequest$1
-com.google.api.client.http.HttpRequestFactory
-com.google.api.client.http.HttpRequestInitializer
-com.google.api.client.http.HttpResponse
-com.google.api.client.http.HttpResponseException
-com.google.api.client.http.HttpStatusCodes
-com.google.api.client.http.HttpTransport
-com.google.api.client.http.HttpUnsuccessfulResponseHandler
+com.google.api.client.http.HttpMediaType:
+    108:111:public HttpMediaType(java.lang.String,java.lang.String)
+    239:241:public void clearParameters()
+    248:248:public java.util.Map getParameters()
+com.google.api.client.http.HttpRequest:
+    public static final java.lang.String VERSION
+    public static final java.lang.String USER_AGENT_SUFFIX
+    private static volatile boolean warnedDeprecatedSetAllowEmptyContent
+    private static volatile boolean warnedDeprecatedIsAllowEmptyContent
+    236:236:public com.google.api.client.http.GenericUrl getUrl()
+    274:274:public boolean getEnableGZipContent()
+    312:312:public com.google.api.client.http.BackOffPolicy getBackOffPolicy()
+    321:322:public com.google.api.client.http.HttpRequest setBackOffPolicy(com.google.api.client.http.BackOffPolicy)
+    374:377:public com.google.api.client.http.HttpRequest setContentLoggingLimit(int)
+    403:404:public com.google.api.client.http.HttpRequest setLoggingEnabled(boolean)
+    413:413:public boolean isCurlLoggingEnabled()
+    426:427:public com.google.api.client.http.HttpRequest setCurlLoggingEnabled(boolean)
+    437:437:public int getConnectTimeout()
+    451:453:public com.google.api.client.http.HttpRequest setConnectTimeout(int)
+    467:467:public int getReadTimeout()
+    477:479:public com.google.api.client.http.HttpRequest setReadTimeout(int)
+    501:502:public com.google.api.client.http.HttpRequest setHeaders(com.google.api.client.http.HttpHeaders)
+    538:539:public com.google.api.client.http.HttpRequest setResponseHeaders(com.google.api.client.http.HttpHeaders)
+    569:569:public com.google.api.client.http.HttpUnsuccessfulResponseHandler getUnsuccessfulResponseHandler()
+    593:599:public com.google.api.client.http.HttpRequest setAllowEmptyContent(boolean)
+    612:616:public boolean isAllowEmptyContent()
+    627:627:public int getNumberOfRetries()
+    642:644:public com.google.api.client.http.HttpRequest setNumberOfRetries(int)
+    725:726:public com.google.api.client.http.HttpRequest setFollowRedirects(boolean)
+    761:761:public boolean getRetryOnExecuteIOException()
+    775:776:public com.google.api.client.http.HttpRequest setRetryOnExecuteIOException(boolean)
+    785:785:public boolean getSuppressUserAgentSuffix()
+    798:799:public com.google.api.client.http.HttpRequest setSuppressUserAgentSuffix(boolean)
+com.google.api.client.http.HttpRequestFactory:
+    110:110:public com.google.api.client.http.HttpRequest buildDeleteRequest(com.google.api.client.http.GenericUrl)
+    120:120:public com.google.api.client.http.HttpRequest buildGetRequest(com.google.api.client.http.GenericUrl)
+    142:142:public com.google.api.client.http.HttpRequest buildPutRequest(com.google.api.client.http.GenericUrl,com.google.api.client.http.HttpContent)
+    153:153:public com.google.api.client.http.HttpRequest buildPatchRequest(com.google.api.client.http.GenericUrl,com.google.api.client.http.HttpContent)
+    164:164:public com.google.api.client.http.HttpRequest buildHeadRequest(com.google.api.client.http.GenericUrl)
+com.google.api.client.http.HttpResponse:
+    195:195:public int getContentLoggingLimit()
+    221:224:public com.google.api.client.http.HttpResponse setContentLoggingLimit(int)
+    237:237:public boolean isLoggingEnabled()
+    250:251:public com.google.api.client.http.HttpResponse setLoggingEnabled(boolean)
+    260:260:public java.lang.String getContentEncoding()
+    279:279:public com.google.api.client.http.HttpMediaType getMediaType()
+    325:325:public com.google.api.client.http.HttpTransport getTransport()
+    424:426:public void download(java.io.OutputStream)
+    536:538:public java.lang.Object parseAs(java.lang.reflect.Type)
+com.google.api.client.http.HttpResponseException:
+    private static final long serialVersionUID
+    97:97:public final boolean isSuccessStatusCode()
+    115:115:public final java.lang.String getStatusMessage()
+    124:124:public com.google.api.client.http.HttpHeaders getHeaders()
+com.google.api.client.http.HttpStatusCodes:
+    public static final int STATUS_CODE_OK
+    public static final int STATUS_CODE_NO_CONTENT
+    public static final int STATUS_CODE_MULTIPLE_CHOICES
+    public static final int STATUS_CODE_MOVED_PERMANENTLY
+    public static final int STATUS_CODE_FOUND
+    public static final int STATUS_CODE_SEE_OTHER
+    public static final int STATUS_CODE_NOT_MODIFIED
+    public static final int STATUS_CODE_TEMPORARY_REDIRECT
+    public static final int STATUS_CODE_UNAUTHORIZED
+    public static final int STATUS_CODE_FORBIDDEN
+    public static final int STATUS_CODE_NOT_FOUND
+    public static final int STATUS_CODE_SERVER_ERROR
+    public static final int STATUS_CODE_SERVICE_UNAVAILABLE
+    24:24:public HttpStatusCodes()
+com.google.api.client.http.HttpTransport:
+    197:197:public void shutdown()
 com.google.api.client.http.InputStreamContent
-com.google.api.client.http.LogContent
-com.google.api.client.http.LowLevelHttpRequest
-com.google.api.client.http.LowLevelHttpResponse
+com.google.api.client.http.LogContent:
+    82:82:int getContentLoggingLimit()
+com.google.api.client.http.LowLevelHttpResponse:
+    public abstract long getContentLength()
 com.google.api.client.http.MultipartRelatedContent
-com.google.api.client.http.UriTemplate
-com.google.api.client.http.UriTemplate$CompositeOutput
-com.google.api.client.http.UrlEncodedContent
-com.google.api.client.http.UrlEncodedParser
-com.google.api.client.http.apache.ApacheHttpRequest
-com.google.api.client.http.apache.ApacheHttpResponse
-com.google.api.client.http.apache.ApacheHttpTransport
-com.google.api.client.http.apache.ContentEntity
-com.google.api.client.http.apache.HttpPatch
-com.google.api.client.http.javanet.NetHttpRequest
-com.google.api.client.http.javanet.NetHttpResponse
-com.google.api.client.http.javanet.NetHttpTransport
-com.google.api.client.http.json.JsonHttpClient
-com.google.api.client.http.json.JsonHttpClient$Builder
-com.google.api.client.http.json.JsonHttpContent
-com.google.api.client.http.json.JsonHttpParser
+com.google.api.client.http.UriTemplate:
+    private static final java.lang.String COMPOSITE_NON_EXPLODE_JOINER
+    77:91:public UriTemplate()
+com.google.api.client.http.UrlEncodedContent:
+    96:97:public com.google.api.client.http.UrlEncodedContent setMediaType(com.google.api.client.http.HttpMediaType)
+    106:106:public final java.lang.Object getData()
+    141:147:public static com.google.api.client.http.UrlEncodedContent getContent(com.google.api.client.http.HttpRequest)
+    56:56:public bridge synthetic com.google.api.client.http.AbstractHttpContent setMediaType(com.google.api.client.http.HttpMediaType)
+com.google.api.client.http.UrlEncodedParser:
+    public static final java.lang.String CONTENT_TYPE
+    66:66:public UrlEncodedParser()
+    181:182:public java.lang.Object parseAndClose(java.io.InputStream,java.nio.charset.Charset,java.lang.reflect.Type)
+com.google.api.client.http.apache.ApacheHttpResponse:
+    66:67:public long getContentLength()
+    95:95:public java.lang.String getHeaderValue(java.lang.String)
+com.google.api.client.http.apache.ApacheHttpTransport:
+    190:191:public void shutdown()
+    199:199:public org.apache.http.client.HttpClient getHttpClient()
+com.google.api.client.http.javanet.NetHttpResponse:
+    74:75:public long getContentLength()
+com.google.api.client.http.json.JsonHttpClient:
+    255:256:public JsonHttpClient(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,java.lang.String)
+    276:277:public JsonHttpClient(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,java.lang.String,java.lang.String,com.google.api.client.http.HttpRequestInitializer)
+    302:309:protected JsonHttpClient(com.google.api.client.http.HttpTransport,com.google.api.client.http.json.JsonHttpRequestInitializer,com.google.api.client.http.HttpRequestInitializer,com.google.api.client.json.JsonFactory,java.lang.String,java.lang.String)
+    485:486:protected com.google.api.client.http.HttpResponse executeUnparsed(com.google.api.client.http.HttpMethod,com.google.api.client.http.GenericUrl,java.lang.Object)
+    542:543:protected java.io.InputStream executeAsInputStream(com.google.api.client.http.HttpMethod,com.google.api.client.http.GenericUrl,java.lang.Object)
+com.google.api.client.http.json.JsonHttpClient$Builder:
+    609:614:protected JsonHttpClient$Builder(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.GenericUrl)
+    642:654:public com.google.api.client.http.json.JsonHttpClient build()
+    711:712:public com.google.api.client.http.json.JsonHttpClient$Builder setObjectParser(com.google.api.client.json.JsonObjectParser)
+    750:753:public com.google.api.client.http.json.JsonHttpClient$Builder setBaseUrl(com.google.api.client.http.GenericUrl)
+    856:857:public com.google.api.client.http.json.JsonHttpClient$Builder setHttpRequestInitializer(com.google.api.client.http.HttpRequestInitializer)
+com.google.api.client.http.json.JsonHttpContent:
+    87:88:public com.google.api.client.http.json.JsonHttpContent setType(java.lang.String)
+    93:94:public com.google.api.client.http.json.JsonHttpContent setMediaType(com.google.api.client.http.HttpMediaType)
+    103:103:public final java.lang.Object getData()
+    112:112:public final com.google.api.client.json.JsonFactory getJsonFactory()
+    49:49:public bridge synthetic com.google.api.client.http.AbstractHttpContent setMediaType(com.google.api.client.http.HttpMediaType)
+com.google.api.client.http.json.JsonHttpParser:
+    99:99:public final com.google.api.client.json.JsonFactory getJsonFactory()
+    138:138:public static com.google.api.client.http.json.JsonHttpParser$Builder builder(com.google.api.client.json.JsonFactory)
 com.google.api.client.http.json.JsonHttpParser$Builder
-com.google.api.client.http.json.JsonHttpRequest
-com.google.api.client.http.json.JsonHttpRequestInitializer
+com.google.api.client.http.json.JsonHttpRequest:
+    87:88:public com.google.api.client.http.json.JsonHttpRequest setEnableGZipContent(boolean)
+    97:97:public final boolean getEnableGZipContent()
+    102:102:public final com.google.api.client.http.HttpMethod getMethod()
+    107:107:public final java.lang.String getUriTemplate()
+    112:112:public final java.lang.Object getJsonContent()
+    132:133:public com.google.api.client.http.json.JsonHttpRequest setRequestHeaders(com.google.api.client.http.HttpHeaders)
+    151:151:public final com.google.api.client.http.HttpHeaders getLastResponseHeaders()
+    234:235:public java.io.InputStream executeAsInputStream()
+    251:253:public void download(java.io.OutputStream)
 com.google.api.client.http.xml.AbstractXmlHttpContent
 com.google.api.client.http.xml.XmlHttpContent
 com.google.api.client.http.xml.XmlHttpParser
@@ -799,21 +1112,44 @@ com.google.api.client.http.xml.XmlHttpParser$Builder
 com.google.api.client.http.xml.atom.AtomContent
 com.google.api.client.http.xml.atom.AtomFeedParser
 com.google.api.client.http.xml.atom.AtomParser
-com.google.api.client.json.CustomizeJsonParser
-com.google.api.client.json.GenericJson
-com.google.api.client.json.Json
-com.google.api.client.json.JsonFactory
-com.google.api.client.json.JsonGenerator
-com.google.api.client.json.JsonObjectParser
-com.google.api.client.json.JsonParser
-com.google.api.client.json.JsonParser$1
-com.google.api.client.json.JsonString
-com.google.api.client.json.JsonToken
-com.google.api.client.json.gson.GsonFactory
-com.google.api.client.json.gson.GsonGenerator
+com.google.api.client.json.CustomizeJsonParser:
+    36:36:public CustomizeJsonParser()
+com.google.api.client.json.GenericJson:
+    49:49:public final com.google.api.client.json.JsonFactory getFactory()
+com.google.api.client.json.Json:
+    public static final java.lang.String CONTENT_TYPE
+    26:26:public Json()
+com.google.api.client.json.JsonFactory:
+    public abstract com.google.api.client.json.JsonParser createJsonParser(java.lang.String)
+    public abstract com.google.api.client.json.JsonParser createJsonParser(java.io.Reader)
+    public abstract com.google.api.client.json.JsonGenerator createJsonGenerator(java.io.Writer)
+    113:113:public final com.google.api.client.json.JsonObjectParser createJsonObjectParser()
+    208:208:public final java.lang.Object fromString(java.lang.String,java.lang.Class)
+    224:224:public final java.lang.Object fromInputStream(java.io.InputStream,java.lang.Class)
+    240:240:public final java.lang.Object fromInputStream(java.io.InputStream,java.nio.charset.Charset,java.lang.Class)
+    254:254:public final java.lang.Object fromReader(java.io.Reader,java.lang.Class)
+com.google.api.client.json.JsonGenerator:
+    public abstract com.google.api.client.json.JsonFactory getFactory()
+    public abstract void close()
+    public abstract void writeNumber(java.lang.String)
+com.google.api.client.json.JsonObjectParser:
+    56:56:public final com.google.api.client.json.JsonFactory getJsonFactory()
+    82:82:public java.lang.Object parseAndClose(java.io.Reader,java.lang.Class)
+    86:87:public java.lang.Object parseAndClose(java.io.Reader,java.lang.reflect.Type)
+com.google.api.client.json.JsonParser:
+    243:247:public final void parseAndClose(java.lang.Object,com.google.api.client.json.CustomizeJsonParser)
+    313:316:public final void parse(java.lang.Object,com.google.api.client.json.CustomizeJsonParser)
+    384:386:public final java.util.Collection parseArrayAndClose(java.lang.Class,java.lang.Class,com.google.api.client.json.CustomizeJsonParser)
+    402:406:public final void parseArrayAndClose(java.util.Collection,java.lang.Class,com.google.api.client.json.CustomizeJsonParser)
+    421:424:public final java.util.Collection parseArray(java.lang.Class,java.lang.Class,com.google.api.client.json.CustomizeJsonParser)
+    438:440:public final void parseArray(java.util.Collection,java.lang.Class,com.google.api.client.json.CustomizeJsonParser)
+com.google.api.client.json.gson.GsonFactory:
+    63:63:public com.google.api.client.json.JsonParser createJsonParser(java.lang.String)
+com.google.api.client.json.gson.GsonGenerator:
+    55:56:public void close()
+    60:60:public com.google.api.client.json.JsonFactory getFactory()
+    170:171:public void writeNumber(java.lang.String)
 com.google.api.client.json.gson.GsonGenerator$StringNumber
-com.google.api.client.json.gson.GsonParser
-com.google.api.client.json.gson.GsonParser$1
 com.google.api.client.json.rpc2.JsonRpcRequest
 com.google.api.client.repackaged.org.apache.commons.codec.BinaryDecoder
 com.google.api.client.repackaged.org.apache.commons.codec.BinaryEncoder
@@ -821,9 +1157,57 @@ com.google.api.client.repackaged.org.apache.commons.codec.Decoder
 com.google.api.client.repackaged.org.apache.commons.codec.DecoderException
 com.google.api.client.repackaged.org.apache.commons.codec.Encoder
 com.google.api.client.repackaged.org.apache.commons.codec.EncoderException
-com.google.api.client.repackaged.org.apache.commons.codec.binary.Base64
-com.google.api.client.repackaged.org.apache.commons.codec.binary.BaseNCodec
-com.google.api.client.repackaged.org.apache.commons.codec.binary.StringUtils
+com.google.api.client.repackaged.org.apache.commons.codec.binary.Base64:
+    private static final int BITS_PER_ENCODED_BYTE
+    private static final int BYTES_PER_UNENCODED_BLOCK
+    private static final int BYTES_PER_ENCODED_BLOCK
+    private static final int MASK_6BITS
+    305:305:public boolean isUrlSafe()
+    417:468:void decode(byte[],int,int)
+    481:481:public static boolean isArrayByteBase64(byte[])
+    493:493:public static boolean isBase64(byte)
+    507:507:public static boolean isBase64(java.lang.String)
+    521:526:public static boolean isBase64(byte[])
+    537:537:public static byte[] encodeBase64(byte[])
+    552:552:public static java.lang.String encodeBase64String(byte[])
+    565:565:public static byte[] encodeBase64URLSafe(byte[])
+    589:589:public static byte[] encodeBase64Chunked(byte[])
+    604:604:public static byte[] encodeBase64(byte[],boolean)
+    669:669:public static byte[] decodeBase64(java.lang.String)
+    680:680:public static byte[] decodeBase64(byte[])
+    695:695:public static java.math.BigInteger decodeInteger(byte[])
+    709:712:public static byte[] encodeInteger(java.math.BigInteger)
+    723:743:static byte[] toIntegerBytes(java.math.BigInteger)
+com.google.api.client.repackaged.org.apache.commons.codec.binary.BaseNCodec:
+    public static final int MIME_CHUNK_SIZE
+    public static final int PEM_CHUNK_SIZE
+    private static final int DEFAULT_BUFFER_RESIZE_FACTOR
+    private static final int DEFAULT_BUFFER_SIZE
+    protected static final int MASK_8BITS
+    protected static final byte PAD_DEFAULT
+    149:149:boolean hasData()
+    227:234:protected static boolean isWhiteSpace(byte)
+    261:264:public java.lang.Object encode(java.lang.Object)
+    275:275:public java.lang.String encodeToString(byte[])
+    289:294:public java.lang.Object decode(java.lang.Object)
+    306:306:public byte[] decode(java.lang.String)
+    317:325:public byte[] decode(byte[])
+    355:355:public java.lang.String encodeAsString(byte[])
+    abstract void decode(byte[],int,int)
+    383:389:public boolean isInAlphabet(byte[],boolean)
+    402:402:public boolean isInAlphabet(java.lang.String)
+com.google.api.client.repackaged.org.apache.commons.codec.binary.StringUtils:
+    34:34:public StringUtils()
+    49:49:public static byte[] getBytesIso8859_1(java.lang.String)
+    65:65:public static byte[] getBytesUsAscii(java.lang.String)
+    81:81:public static byte[] getBytesUtf16(java.lang.String)
+    97:97:public static byte[] getBytesUtf16Be(java.lang.String)
+    113:113:public static byte[] getBytesUtf16Le(java.lang.String)
+    208:208:public static java.lang.String newStringIso8859_1(byte[])
+    223:223:public static java.lang.String newStringUsAscii(byte[])
+    238:238:public static java.lang.String newStringUtf16(byte[])
+    253:253:public static java.lang.String newStringUtf16Be(byte[])
+    268:268:public static java.lang.String newStringUtf16Le(byte[])
 com.google.api.client.testing.http.FixedClock
 com.google.api.client.testing.http.HttpTesting
 com.google.api.client.testing.http.MockHttpContent
@@ -836,45 +1220,64 @@ com.google.api.client.testing.http.javanet.MockHttpURLConnection
 com.google.api.client.testing.http.json.MockJsonFactory
 com.google.api.client.testing.http.json.MockJsonGenerator
 com.google.api.client.testing.http.json.MockJsonParser
-com.google.api.client.util.ArrayMap
-com.google.api.client.util.ArrayMap$Entry
-com.google.api.client.util.ArrayMap$EntryIterator
-com.google.api.client.util.ArrayMap$EntrySet
-com.google.api.client.util.ArrayValueMap
-com.google.api.client.util.ArrayValueMap$ArrayValue
-com.google.api.client.util.Base64
-com.google.api.client.util.ClassInfo
-com.google.api.client.util.ClassInfo$1
-com.google.api.client.util.Clock
-com.google.api.client.util.Clock$1
-com.google.api.client.util.Data
-com.google.api.client.util.DataMap
-com.google.api.client.util.DataMap$Entry
-com.google.api.client.util.DataMap$EntryIterator
-com.google.api.client.util.DataMap$EntrySet
-com.google.api.client.util.DateTime
-com.google.api.client.util.FieldInfo
-com.google.api.client.util.GenericData
-com.google.api.client.util.GenericData$EntryIterator
-com.google.api.client.util.GenericData$EntrySet
-com.google.api.client.util.GenericData$Flags
-com.google.api.client.util.Key
-com.google.api.client.util.LoggingByteArrayOutputStream
-com.google.api.client.util.LoggingInputStream
-com.google.api.client.util.LoggingOutputStream
-com.google.api.client.util.NullValue
-com.google.api.client.util.ObjectParser
-com.google.api.client.util.StringUtils
-com.google.api.client.util.Types
-com.google.api.client.util.Types$1
-com.google.api.client.util.Types$1$1
-com.google.api.client.util.Value
-com.google.api.client.util.escape.CharEscapers
-com.google.api.client.util.escape.Escaper
-com.google.api.client.util.escape.PercentEscaper
-com.google.api.client.util.escape.Platform
-com.google.api.client.util.escape.Platform$1
-com.google.api.client.util.escape.UnicodeEscaper
+com.google.api.client.util.ArrayMap:
+    67:69:public static com.google.api.client.util.ArrayMap create(int)
+    83:92:public static varargs com.google.api.client.util.ArrayMap of(java.lang.Object[])
+    168:169:public final void add(java.lang.Object,java.lang.Object)
+    226:227:public final void trim()
+com.google.api.client.util.ArrayValueMap:
+    139:145:public void put(java.lang.String,java.lang.Class,java.lang.Object)
+com.google.api.client.util.Base64:
+    41:41:public static byte[] encodeBase64(byte[])
+    53:53:public static java.lang.String encodeBase64String(byte[])
+    67:67:public static byte[] encodeBase64URLSafe(byte[])
+    92:92:public static byte[] decodeBase64(byte[])
+    104:104:public static byte[] decodeBase64(java.lang.String)
+    107:108:private Base64()
+com.google.api.client.util.ClassInfo:
+    105:105:public java.lang.Class getUnderlyingClass()
+    158:158:public java.util.Collection getNames()
+com.google.api.client.util.Data:
+    46:46:public Data()
+com.google.api.client.util.DateTime:
+    private static final long serialVersionUID
+    61:66:public DateTime(java.util.Date,java.util.TimeZone)
+    73:74:public DateTime(java.util.Date)
+    77:78:public DateTime(long,java.lang.Integer)
+    92:99:public DateTime(java.lang.String)
+    112:112:public long getValue()
+    121:121:public boolean isDateOnly()
+    130:130:public java.lang.Integer getTimeZoneShift()
+com.google.api.client.util.FieldInfo:
+    213:213:public com.google.api.client.util.ClassInfo getClassInfo()
+com.google.api.client.util.GenericData:
+    180:180:public final java.util.Map getUnknownKeys()
+    189:190:public final void setUnknownKeys(java.util.Map)
+com.google.api.client.util.LoggingByteArrayOutputStream:
+    121:121:public final int getMaximumBytesToLog()
+    126:126:public final synchronized int getBytesWritten()
+com.google.api.client.util.LoggingInputStream:
+    72:72:public final com.google.api.client.util.LoggingByteArrayOutputStream getLogStream()
+com.google.api.client.util.ObjectParser:
+    public abstract java.lang.Object parseAndClose(java.io.InputStream,java.nio.charset.Charset,java.lang.reflect.Type)
+    public abstract java.lang.Object parseAndClose(java.io.Reader,java.lang.Class)
+    public abstract java.lang.Object parseAndClose(java.io.Reader,java.lang.reflect.Type)
+com.google.api.client.util.StringUtils:
+    73:73:public static java.lang.String newStringUtf8(byte[])
+    76:77:private StringUtils()
+com.google.api.client.util.Types:
+    410:411:private Types()
+com.google.api.client.util.escape.CharEscapers:
+    154:155:private CharEscapers()
+com.google.api.client.util.escape.PercentEscaper:
+    public static final java.lang.String SAFECHARS_URLENCODER
+    public static final java.lang.String SAFEPATHCHARS_URLENCODER
+    public static final java.lang.String SAFEQUERYSTRINGCHARS_URLENCODER
+com.google.api.client.util.escape.Platform:
+    21:22:private Platform()
+com.google.api.client.util.escape.UnicodeEscaper:
+    private static final int DEST_PAD
+    public abstract java.lang.String escape(java.lang.String)
 com.google.api.client.xml.GenericXml
 com.google.api.client.xml.Xml
 com.google.api.client.xml.Xml$CustomizeParser
@@ -884,21 +1287,73 @@ com.google.api.client.xml.XmlObjectParser
 com.google.api.client.xml.atom.AbstractAtomFeedParser
 com.google.api.client.xml.atom.Atom
 com.google.api.client.xml.atom.Atom$StopAtAtomEntry
-com.google.api.services.drive.Drive
-com.google.api.services.drive.Drive$About
-com.google.api.services.drive.Drive$About$Get
+com.google.api.services.drive.Drive:
+    public static final java.lang.String DEFAULT_BASE_PATH
+    public static final java.lang.String DEFAULT_ROOT_URL
+    public static final java.lang.String DEFAULT_SERVICE_PATH
+    public static final java.lang.String DEFAULT_BASE_URL
+    114:115:public Drive(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory)
+    131:132:public Drive(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)
+    213:213:public static com.google.api.services.drive.Drive$Builder builder(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory)
+    2859:2859:public com.google.api.services.drive.Drive$Apps apps()
+    3064:3064:public com.google.api.services.drive.Drive$Comments comments()
+    3876:3876:public com.google.api.services.drive.Drive$Parents parents()
+    4335:4335:public com.google.api.services.drive.Drive$Replies replies()
+    5184:5184:public com.google.api.services.drive.Drive$Revisions revisions()
+    5782:5782:public com.google.api.services.drive.Drive$Changes changes()
+    6628:6628:public com.google.api.services.drive.Drive$Permissions permissions()
+    68:68:static synthetic com.google.api.client.http.json.JsonHttpContent access$000(com.google.api.services.drive.Drive,java.lang.Object)
+    68:68:static synthetic com.google.api.client.http.json.JsonHttpContent access$100(com.google.api.services.drive.Drive,java.lang.Object)
+com.google.api.services.drive.Drive$About$Get:
+    private static final java.lang.String REST_PATH
+    2756:2758:public void queue(com.google.api.client.googleapis.batch.BatchRequest,com.google.api.client.googleapis.batch.json.JsonBatchCallback)
+    2765:2766:public com.google.api.services.drive.Drive$About$Get setFields(java.lang.String)
+    2777:2777:public java.lang.Boolean getIncludeSubscribed()
+    2782:2783:public com.google.api.services.drive.Drive$About$Get setIncludeSubscribed(java.lang.Boolean)
+    2807:2810:public boolean isIncludeSubscribed()
+    2820:2820:public java.lang.Long getMaxChangeIdCount()
+    2825:2826:public com.google.api.services.drive.Drive$About$Get setMaxChangeIdCount(java.lang.Long)
+    2836:2836:public java.lang.Long getStartChangeId()
+    2841:2842:public com.google.api.services.drive.Drive$About$Get setStartChangeId(java.lang.Long)
+    2704:2704:public bridge synthetic com.google.api.services.drive.DriveRequest setFields(java.lang.String)
 com.google.api.services.drive.Drive$Apps
 com.google.api.services.drive.Drive$Apps$Get
 com.google.api.services.drive.Drive$Apps$List
-com.google.api.services.drive.Drive$Builder
+com.google.api.services.drive.Drive$Builder:
+    7382:7383:Drive$Builder(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.GenericUrl)
+    7427:7428:public com.google.api.services.drive.Drive$Builder setBaseUrl(com.google.api.client.http.GenericUrl)
+    7452:7453:public com.google.api.services.drive.Drive$Builder setHttpRequestInitializer(com.google.api.client.http.HttpRequestInitializer)
+    7464:7465:public com.google.api.services.drive.Drive$Builder setObjectParser(com.google.api.client.json.JsonObjectParser)
+    7470:7471:public com.google.api.services.drive.Drive$Builder setSuppressPatternChecks(boolean)
+    7371:7371:public bridge synthetic com.google.api.client.googleapis.services.GoogleClient build()
+    7371:7371:public bridge synthetic com.google.api.client.googleapis.services.GoogleClient$Builder setSuppressPatternChecks(boolean)
+    7371:7371:public bridge synthetic com.google.api.client.http.json.JsonHttpClient$Builder setHttpRequestInitializer(com.google.api.client.http.HttpRequestInitializer)
+    7371:7371:public bridge synthetic com.google.api.client.http.json.JsonHttpClient$Builder setBaseUrl(com.google.api.client.http.GenericUrl)
+    7371:7371:public bridge synthetic com.google.api.client.http.json.JsonHttpClient$Builder setObjectParser(com.google.api.client.json.JsonObjectParser)
+    7371:7371:public bridge synthetic com.google.api.client.http.json.JsonHttpClient build()
 com.google.api.services.drive.Drive$Changes
 com.google.api.services.drive.Drive$Changes$Get
 com.google.api.services.drive.Drive$Changes$List
-com.google.api.services.drive.Drive$Children
+com.google.api.services.drive.Drive$Children:
+    6143:6145:public com.google.api.services.drive.Drive$Children$Insert insert(java.lang.String,com.google.api.services.drive.model.ChildReference)
+    6246:6248:public com.google.api.services.drive.Drive$Children$Get get(java.lang.String,java.lang.String)
+    6514:6516:public com.google.api.services.drive.Drive$Children$Delete delete(java.lang.String,java.lang.String)
 com.google.api.services.drive.Drive$Children$Delete
 com.google.api.services.drive.Drive$Children$Get
 com.google.api.services.drive.Drive$Children$Insert
-com.google.api.services.drive.Drive$Children$List
+com.google.api.services.drive.Drive$Children$List:
+    private static final java.lang.String REST_PATH
+    6422:6424:public void queue(com.google.api.client.googleapis.batch.BatchRequest,com.google.api.client.googleapis.batch.json.JsonBatchCallback)
+    6431:6432:public com.google.api.services.drive.Drive$Children$List setFields(java.lang.String)
+    6442:6442:public java.lang.String getFolderId()
+    6447:6448:public com.google.api.services.drive.Drive$Children$List setFolderId(java.lang.String)
+    6458:6458:public java.lang.String getQ()
+    6463:6464:public com.google.api.services.drive.Drive$Children$List setQ(java.lang.String)
+    6474:6474:public java.lang.String getPageToken()
+    6479:6480:public com.google.api.services.drive.Drive$Children$List setPageToken(java.lang.String)
+    6490:6490:public java.lang.Integer getMaxResults()
+    6495:6496:public com.google.api.services.drive.Drive$Children$List setMaxResults(java.lang.Integer)
+    6369:6369:public bridge synthetic com.google.api.services.drive.DriveRequest setFields(java.lang.String)
 com.google.api.services.drive.Drive$Comments
 com.google.api.services.drive.Drive$Comments$Delete
 com.google.api.services.drive.Drive$Comments$Get
@@ -906,10 +1361,35 @@ com.google.api.services.drive.Drive$Comments$Insert
 com.google.api.services.drive.Drive$Comments$List
 com.google.api.services.drive.Drive$Comments$Patch
 com.google.api.services.drive.Drive$Comments$Update
-com.google.api.services.drive.Drive$Files
+com.google.api.services.drive.Drive$Files:
+    247:249:public com.google.api.services.drive.Drive$Files$Insert insert(com.google.api.services.drive.model.File)
+    272:274:public com.google.api.services.drive.Drive$Files$Insert insert(com.google.api.services.drive.model.File,com.google.api.client.http.AbstractInputStreamContent)
+    621:623:public com.google.api.services.drive.Drive$Files$Untrash untrash(java.lang.String)
+    722:724:public com.google.api.services.drive.Drive$Files$Trash trash(java.lang.String)
+    1028:1030:public com.google.api.services.drive.Drive$Files$List list()
+    1177:1179:public com.google.api.services.drive.Drive$Files$Update update(java.lang.String,com.google.api.services.drive.model.File)
+    1202:1204:public com.google.api.services.drive.Drive$Files$Update update(java.lang.String,com.google.api.services.drive.model.File,com.google.api.client.http.AbstractInputStreamContent)
+    1707:1709:public com.google.api.services.drive.Drive$Files$Patch patch(java.lang.String,com.google.api.services.drive.model.File)
+    2162:2164:public com.google.api.services.drive.Drive$Files$Touch touch(java.lang.String)
+    2264:2266:public com.google.api.services.drive.Drive$Files$Copy copy(java.lang.String,com.google.api.services.drive.model.File)
+    2582:2584:public com.google.api.services.drive.Drive$Files$Delete delete(java.lang.String)
 com.google.api.services.drive.Drive$Files$Copy
 com.google.api.services.drive.Drive$Files$Delete
-com.google.api.services.drive.Drive$Files$Get
+com.google.api.services.drive.Drive$Files$Get:
+    private static final java.lang.String REST_PATH
+    873:875:public java.io.InputStream executeAsMedia()
+    883:884:public void download(java.io.OutputStream)
+    913:915:public void queue(com.google.api.client.googleapis.batch.BatchRequest,com.google.api.client.googleapis.batch.json.JsonBatchCallback)
+    922:923:public com.google.api.services.drive.Drive$Files$Get setFields(java.lang.String)
+    933:933:public java.lang.String getFileId()
+    938:939:public com.google.api.services.drive.Drive$Files$Get setFileId(java.lang.String)
+    949:949:public java.lang.Boolean getUpdateViewedDate()
+    954:955:public com.google.api.services.drive.Drive$Files$Get setUpdateViewedDate(java.lang.Boolean)
+    979:982:public boolean isUpdateViewedDate()
+    992:992:public java.lang.String getProjection()
+    997:998:public com.google.api.services.drive.Drive$Files$Get setProjection(java.lang.String)
+    1012:1012:public com.google.api.client.googleapis.media.MediaHttpDownloader getMediaHttpDownloader()
+    828:828:public bridge synthetic com.google.api.services.drive.DriveRequest setFields(java.lang.String)
 com.google.api.services.drive.Drive$Files$Insert
 com.google.api.services.drive.Drive$Files$List
 com.google.api.services.drive.Drive$Files$Patch
@@ -942,42 +1422,314 @@ com.google.api.services.drive.Drive$Revisions$Get
 com.google.api.services.drive.Drive$Revisions$List
 com.google.api.services.drive.Drive$Revisions$Patch
 com.google.api.services.drive.Drive$Revisions$Update
-com.google.api.services.drive.DriveRequest
+com.google.api.services.drive.DriveRequest:
+    54:54:public java.lang.Boolean getPrettyPrint()
+    59:60:public com.google.api.services.drive.DriveRequest setPrettyPrint(java.lang.Boolean)
+    71:71:public java.lang.String getFields()
+    76:77:public com.google.api.services.drive.DriveRequest setFields(java.lang.String)
+    92:92:public java.lang.String getQuotaUser()
+    100:101:public com.google.api.services.drive.DriveRequest setQuotaUser(java.lang.String)
+    112:112:public java.lang.String getOauthToken()
+    117:118:public com.google.api.services.drive.DriveRequest setOauthToken(java.lang.String)
+    133:133:public java.lang.String getKey()
+    141:142:public com.google.api.services.drive.DriveRequest setKey(java.lang.String)
+    157:157:public java.lang.String getUserIp()
+    165:166:public com.google.api.services.drive.DriveRequest setUserIp(java.lang.String)
+    177:177:public java.lang.String getAlt()
+    182:183:public com.google.api.services.drive.DriveRequest setAlt(java.lang.String)
 com.google.api.services.drive.DriveScopes
-com.google.api.services.drive.model.About
-com.google.api.services.drive.model.About$AdditionalRoleInfo
-com.google.api.services.drive.model.About$AdditionalRoleInfo$RoleSets
-com.google.api.services.drive.model.About$ExportFormats
-com.google.api.services.drive.model.About$Features
-com.google.api.services.drive.model.About$ImportFormats
-com.google.api.services.drive.model.About$MaxUploadSizes
+com.google.api.services.drive.model.About:
+    212:212:public java.lang.String getKind()
+    220:221:public com.google.api.services.drive.model.About setKind(java.lang.String)
+    229:229:public java.util.List getFeatures()
+    237:238:public com.google.api.services.drive.model.About setFeatures(java.util.List)
+    246:246:public java.lang.Long getQuotaBytesUsed()
+    254:255:public com.google.api.services.drive.model.About setQuotaBytesUsed(java.lang.Long)
+    263:263:public com.google.api.services.drive.model.User getUser()
+    271:272:public com.google.api.services.drive.model.About setUser(com.google.api.services.drive.model.User)
+    280:280:public java.lang.String getPermissionId()
+    288:289:public com.google.api.services.drive.model.About setPermissionId(java.lang.String)
+    297:297:public java.util.List getMaxUploadSizes()
+    305:306:public com.google.api.services.drive.model.About setMaxUploadSizes(java.util.List)
+    314:314:public java.lang.String getName()
+    322:323:public com.google.api.services.drive.model.About setName(java.lang.String)
+    331:331:public java.lang.Long getRemainingChangeIds()
+    339:340:public com.google.api.services.drive.model.About setRemainingChangeIds(java.lang.Long)
+    349:349:public java.util.List getAdditionalRoleInfo()
+    358:359:public com.google.api.services.drive.model.About setAdditionalRoleInfo(java.util.List)
+    367:367:public java.lang.String getEtag()
+    375:376:public com.google.api.services.drive.model.About setEtag(java.lang.String)
+    384:384:public java.util.List getImportFormats()
+    392:393:public com.google.api.services.drive.model.About setImportFormats(java.util.List)
+    401:401:public java.lang.Long getQuotaBytesTotal()
+    409:410:public com.google.api.services.drive.model.About setQuotaBytesTotal(java.lang.Long)
+    426:427:public com.google.api.services.drive.model.About setRootFolderId(java.lang.String)
+    435:435:public java.lang.Long getLargestChangeId()
+    443:444:public com.google.api.services.drive.model.About setLargestChangeId(java.lang.Long)
+    452:452:public java.lang.Long getQuotaBytesUsedInTrash()
+    460:461:public com.google.api.services.drive.model.About setQuotaBytesUsedInTrash(java.lang.Long)
+    469:469:public java.util.List getExportFormats()
+    477:478:public com.google.api.services.drive.model.About setExportFormats(java.util.List)
+    486:486:public java.lang.Long getQuotaBytesUsedAggregate()
+    494:495:public com.google.api.services.drive.model.About setQuotaBytesUsedAggregate(java.lang.Long)
+    503:503:public java.lang.String getDomainSharingPolicy()
+    511:512:public com.google.api.services.drive.model.About setDomainSharingPolicy(java.lang.String)
+    520:520:public java.lang.String getSelfLink()
+    528:529:public com.google.api.services.drive.model.About setSelfLink(java.lang.String)
+    537:537:public java.lang.Boolean getIsCurrentAppInstalled()
+    545:546:public com.google.api.services.drive.model.About setIsCurrentAppInstalled(java.lang.Boolean)
+    568:568:public com.google.api.client.http.HttpHeaders getResponseHeaders()
+com.google.api.services.drive.model.About$AdditionalRoleInfo:
+    711:711:public java.util.List getRoleSets()
+    719:720:public com.google.api.services.drive.model.About$AdditionalRoleInfo setRoleSets(java.util.List)
+    728:728:public java.lang.String getType()
+    736:737:public com.google.api.services.drive.model.About$AdditionalRoleInfo setType(java.lang.String)
+com.google.api.services.drive.model.About$AdditionalRoleInfo$RoleSets:
+    764:764:public java.lang.String getPrimaryRole()
+    772:773:public com.google.api.services.drive.model.About$AdditionalRoleInfo$RoleSets setPrimaryRole(java.lang.String)
+    781:781:public java.util.List getAdditionalRoles()
+    789:790:public com.google.api.services.drive.model.About$AdditionalRoleInfo$RoleSets setAdditionalRoles(java.util.List)
+com.google.api.services.drive.model.About$ExportFormats:
+    875:875:public java.lang.String getSource()
+    883:884:public com.google.api.services.drive.model.About$ExportFormats setSource(java.lang.String)
+    892:892:public java.util.List getTargets()
+    900:901:public com.google.api.services.drive.model.About$ExportFormats setTargets(java.util.List)
+com.google.api.services.drive.model.About$Features:
+    595:595:public java.lang.String getFeatureName()
+    603:604:public com.google.api.services.drive.model.About$Features setFeatureName(java.lang.String)
+    612:612:public java.lang.Double getFeatureRate()
+    620:621:public com.google.api.services.drive.model.About$Features setFeatureRate(java.lang.Double)
+com.google.api.services.drive.model.About$ImportFormats:
+    820:820:public java.lang.String getSource()
+    828:829:public com.google.api.services.drive.model.About$ImportFormats setSource(java.lang.String)
+    837:837:public java.util.List getTargets()
+    845:846:public com.google.api.services.drive.model.About$ImportFormats setTargets(java.util.List)
+com.google.api.services.drive.model.About$MaxUploadSizes:
+    650:650:public java.lang.String getType()
+    658:659:public com.google.api.services.drive.model.About$MaxUploadSizes setType(java.lang.String)
+    667:667:public java.lang.Long getSize()
+    675:676:public com.google.api.services.drive.model.About$MaxUploadSizes setSize(java.lang.Long)
 com.google.api.services.drive.model.App
 com.google.api.services.drive.model.App$Icons
 com.google.api.services.drive.model.AppList
 com.google.api.services.drive.model.Change
 com.google.api.services.drive.model.ChangeList
-com.google.api.services.drive.model.ChildList
-com.google.api.services.drive.model.ChildReference
+com.google.api.services.drive.model.ChildList:
+    88:88:public java.lang.String getNextPageToken()
+    96:97:public com.google.api.services.drive.model.ChildList setNextPageToken(java.lang.String)
+    105:105:public java.lang.String getKind()
+    113:114:public com.google.api.services.drive.model.ChildList setKind(java.lang.String)
+    130:131:public com.google.api.services.drive.model.ChildList setItems(java.util.List)
+    139:139:public java.lang.String getNextLink()
+    147:148:public com.google.api.services.drive.model.ChildList setNextLink(java.lang.String)
+    156:156:public java.lang.String getEtag()
+    164:165:public com.google.api.services.drive.model.ChildList setEtag(java.lang.String)
+    173:173:public java.lang.String getSelfLink()
+    181:182:public com.google.api.services.drive.model.ChildList setSelfLink(java.lang.String)
+    204:204:public com.google.api.client.http.HttpHeaders getResponseHeaders()
+com.google.api.services.drive.model.ChildReference:
+    private com.google.api.client.http.HttpHeaders responseHeaders
+    68:68:public java.lang.String getKind()
+    76:77:public com.google.api.services.drive.model.ChildReference setKind(java.lang.String)
+    85:85:public java.lang.String getChildLink()
+    93:94:public com.google.api.services.drive.model.ChildReference setChildLink(java.lang.String)
+    110:111:public com.google.api.services.drive.model.ChildReference setId(java.lang.String)
+    119:119:public java.lang.String getSelfLink()
+    127:128:public com.google.api.services.drive.model.ChildReference setSelfLink(java.lang.String)
+    142:143:public void setResponseHeaders(com.google.api.client.http.HttpHeaders)
+    150:150:public com.google.api.client.http.HttpHeaders getResponseHeaders()
 com.google.api.services.drive.model.Comment
 com.google.api.services.drive.model.Comment$Context
 com.google.api.services.drive.model.CommentList
 com.google.api.services.drive.model.CommentReply
 com.google.api.services.drive.model.CommentReplyList
-com.google.api.services.drive.model.File
-com.google.api.services.drive.model.File$ImageMediaMetadata
-com.google.api.services.drive.model.File$ImageMediaMetadata$Location
-com.google.api.services.drive.model.File$IndexableText
-com.google.api.services.drive.model.File$Labels
-com.google.api.services.drive.model.File$Thumbnail
+com.google.api.services.drive.model.File:
+    317:318:public com.google.api.services.drive.model.File setMimeType(java.lang.String)
+    326:326:public java.lang.String getThumbnailLink()
+    334:335:public com.google.api.services.drive.model.File setThumbnailLink(java.lang.String)
+    343:343:public com.google.api.services.drive.model.File$Labels getLabels()
+    351:352:public com.google.api.services.drive.model.File setLabels(com.google.api.services.drive.model.File$Labels)
+    360:360:public com.google.api.services.drive.model.File$IndexableText getIndexableText()
+    368:369:public com.google.api.services.drive.model.File setIndexableText(com.google.api.services.drive.model.File$IndexableText)
+    387:388:public com.google.api.services.drive.model.File setExplicitlyTrashed(java.lang.Boolean)
+    396:396:public java.lang.String getEtag()
+    404:405:public com.google.api.services.drive.model.File setEtag(java.lang.String)
+    414:414:public java.lang.String getLastModifyingUserName()
+    423:424:public com.google.api.services.drive.model.File setLastModifyingUserName(java.lang.String)
+    432:432:public java.lang.Boolean getWritersCanShare()
+    440:441:public com.google.api.services.drive.model.File setWritersCanShare(java.lang.Boolean)
+    457:458:public com.google.api.services.drive.model.File setId(java.lang.String)
+    474:475:public com.google.api.services.drive.model.File setTitle(java.lang.String)
+    483:483:public java.util.List getOwnerNames()
+    491:492:public com.google.api.services.drive.model.File setOwnerNames(java.util.List)
+    500:500:public com.google.api.client.util.DateTime getSharedWithMeDate()
+    508:509:public com.google.api.services.drive.model.File setSharedWithMeDate(com.google.api.client.util.DateTime)
+    517:517:public com.google.api.client.util.DateTime getLastViewedByMeDate()
+    525:526:public com.google.api.services.drive.model.File setLastViewedByMeDate(com.google.api.client.util.DateTime)
+    536:536:public java.util.List getParents()
+    546:547:public com.google.api.services.drive.model.File setParents(java.util.List)
+    555:555:public java.util.Map getExportLinks()
+    563:564:public com.google.api.services.drive.model.File setExportLinks(java.util.Map)
+    573:573:public com.google.api.services.drive.model.File$Thumbnail getThumbnail()
+    582:583:public com.google.api.services.drive.model.File setThumbnail(com.google.api.services.drive.model.File$Thumbnail)
+    593:593:public java.lang.String getOriginalFilename()
+    603:604:public com.google.api.services.drive.model.File setOriginalFilename(java.lang.String)
+    612:612:public java.lang.String getDescription()
+    620:621:public com.google.api.services.drive.model.File setDescription(java.lang.String)
+    631:631:public java.lang.String getWebContentLink()
+    641:642:public com.google.api.services.drive.model.File setWebContentLink(java.lang.String)
+    650:650:public java.lang.Boolean getEditable()
+    658:659:public com.google.api.services.drive.model.File setEditable(java.lang.Boolean)
+    667:667:public java.lang.String getKind()
+    675:676:public com.google.api.services.drive.model.File setKind(java.lang.String)
+    684:684:public java.lang.Long getQuotaBytesUsed()
+    692:693:public com.google.api.services.drive.model.File setQuotaBytesUsed(java.lang.Long)
+    702:702:public java.lang.Long getFileSize()
+    711:712:public com.google.api.services.drive.model.File setFileSize(java.lang.Long)
+    720:720:public com.google.api.client.util.DateTime getCreatedDate()
+    728:729:public com.google.api.services.drive.model.File setCreatedDate(com.google.api.client.util.DateTime)
+    738:738:public java.lang.String getMd5Checksum()
+    747:748:public com.google.api.services.drive.model.File setMd5Checksum(java.lang.String)
+    757:757:public com.google.api.services.drive.model.File$ImageMediaMetadata getImageMediaMetadata()
+    766:767:public com.google.api.services.drive.model.File setImageMediaMetadata(com.google.api.services.drive.model.File$ImageMediaMetadata)
+    775:775:public java.lang.String getEmbedLink()
+    783:784:public com.google.api.services.drive.model.File setEmbedLink(java.lang.String)
+    792:792:public java.lang.String getAlternateLink()
+    800:801:public com.google.api.services.drive.model.File setAlternateLink(java.lang.String)
+    810:810:public com.google.api.client.util.DateTime getModifiedByMeDate()
+    819:820:public com.google.api.services.drive.model.File setModifiedByMeDate(com.google.api.client.util.DateTime)
+    829:829:public java.lang.String getDownloadUrl()
+    838:839:public com.google.api.services.drive.model.File setDownloadUrl(java.lang.String)
+    847:847:public com.google.api.services.drive.model.Permission getUserPermission()
+    855:856:public com.google.api.services.drive.model.File setUserPermission(com.google.api.services.drive.model.Permission)
+    866:866:public java.lang.String getFileExtension()
+    876:877:public com.google.api.services.drive.model.File setFileExtension(java.lang.String)
+    885:885:public java.lang.String getSelfLink()
+    893:894:public com.google.api.services.drive.model.File setSelfLink(java.lang.String)
+    903:903:public com.google.api.client.util.DateTime getModifiedDate()
+    912:913:public com.google.api.services.drive.model.File setModifiedDate(com.google.api.client.util.DateTime)
+    935:935:public com.google.api.client.http.HttpHeaders getResponseHeaders()
+com.google.api.services.drive.model.File$ImageMediaMetadata:
+    1156:1449:public File$ImageMediaMetadata()
+    1247:1247:public java.lang.Boolean getFlashUsed()
+    1255:1256:public com.google.api.services.drive.model.File$ImageMediaMetadata setFlashUsed(java.lang.Boolean)
+    1264:1264:public java.lang.Float getExposureTime()
+    1272:1273:public com.google.api.services.drive.model.File$ImageMediaMetadata setExposureTime(java.lang.Float)
+    1281:1281:public java.lang.String getCameraMake()
+    1289:1290:public com.google.api.services.drive.model.File$ImageMediaMetadata setCameraMake(java.lang.String)
+    1298:1298:public java.lang.Integer getIsoSpeed()
+    1306:1307:public com.google.api.services.drive.model.File$ImageMediaMetadata setIsoSpeed(java.lang.Integer)
+    1315:1315:public java.lang.Float getFocalLength()
+    1323:1324:public com.google.api.services.drive.model.File$ImageMediaMetadata setFocalLength(java.lang.Float)
+    1332:1332:public java.lang.Integer getHeight()
+    1340:1341:public com.google.api.services.drive.model.File$ImageMediaMetadata setHeight(java.lang.Integer)
+    1349:1349:public java.lang.String getDate()
+    1357:1358:public com.google.api.services.drive.model.File$ImageMediaMetadata setDate(java.lang.String)
+    1366:1366:public com.google.api.services.drive.model.File$ImageMediaMetadata$Location getLocation()
+    1374:1375:public com.google.api.services.drive.model.File$ImageMediaMetadata setLocation(com.google.api.services.drive.model.File$ImageMediaMetadata$Location)
+    1383:1383:public java.lang.Float getAperture()
+    1391:1392:public com.google.api.services.drive.model.File$ImageMediaMetadata setAperture(java.lang.Float)
+    1400:1400:public java.lang.Integer getRotation()
+    1408:1409:public com.google.api.services.drive.model.File$ImageMediaMetadata setRotation(java.lang.Integer)
+    1417:1417:public java.lang.Integer getWidth()
+    1425:1426:public com.google.api.services.drive.model.File$ImageMediaMetadata setWidth(java.lang.Integer)
+    1434:1434:public java.lang.String getCameraModel()
+    1442:1443:public com.google.api.services.drive.model.File$ImageMediaMetadata setCameraModel(java.lang.String)
+com.google.api.services.drive.model.File$ImageMediaMetadata$Location:
+    1449:1449:public File$ImageMediaMetadata$Location()
+    1477:1477:public java.lang.Double getLatitude()
+    1485:1486:public com.google.api.services.drive.model.File$ImageMediaMetadata$Location setLatitude(java.lang.Double)
+    1494:1494:public java.lang.Double getAltitude()
+    1502:1503:public com.google.api.services.drive.model.File$ImageMediaMetadata$Location setAltitude(java.lang.Double)
+    1511:1511:public java.lang.Double getLongitude()
+    1519:1520:public com.google.api.services.drive.model.File$ImageMediaMetadata$Location setLongitude(java.lang.Double)
+com.google.api.services.drive.model.File$IndexableText:
+    1068:1068:public File$IndexableText()
+    1082:1082:public java.lang.String getText()
+    1090:1091:public com.google.api.services.drive.model.File$IndexableText setText(java.lang.String)
+com.google.api.services.drive.model.File$Labels:
+    941:941:public File$Labels()
+    983:983:public java.lang.Boolean getRestricted()
+    991:992:public com.google.api.services.drive.model.File$Labels setRestricted(java.lang.Boolean)
+    1000:1000:public java.lang.Boolean getHidden()
+    1008:1009:public com.google.api.services.drive.model.File$Labels setHidden(java.lang.Boolean)
+    1017:1017:public java.lang.Boolean getViewed()
+    1025:1026:public com.google.api.services.drive.model.File$Labels setViewed(java.lang.Boolean)
+    1034:1034:public java.lang.Boolean getStarred()
+    1042:1043:public com.google.api.services.drive.model.File$Labels setStarred(java.lang.Boolean)
+    1051:1051:public java.lang.Boolean getTrashed()
+    1059:1060:public com.google.api.services.drive.model.File$Labels setTrashed(java.lang.Boolean)
+com.google.api.services.drive.model.File$Thumbnail:
+    1100:1100:public File$Thumbnail()
+    1121:1121:public java.lang.String getMimeType()
+    1129:1130:public com.google.api.services.drive.model.File$Thumbnail setMimeType(java.lang.String)
+    1138:1138:public java.lang.String getImage()
+    1146:1147:public com.google.api.services.drive.model.File$Thumbnail setImage(java.lang.String)
 com.google.api.services.drive.model.FileList
 com.google.api.services.drive.model.ParentList
-com.google.api.services.drive.model.ParentReference
-com.google.api.services.drive.model.Permission
+com.google.api.services.drive.model.ParentReference:
+    private com.google.api.client.http.HttpHeaders responseHeaders
+    75:75:public java.lang.String getSelfLink()
+    83:84:public com.google.api.services.drive.model.ParentReference setSelfLink(java.lang.String)
+    92:92:public java.lang.String getKind()
+    100:101:public com.google.api.services.drive.model.ParentReference setKind(java.lang.String)
+    109:109:public java.lang.String getId()
+    117:118:public com.google.api.services.drive.model.ParentReference setId(java.lang.String)
+    126:126:public java.lang.Boolean getIsRoot()
+    134:135:public com.google.api.services.drive.model.ParentReference setIsRoot(java.lang.Boolean)
+    143:143:public java.lang.String getParentLink()
+    151:152:public com.google.api.services.drive.model.ParentReference setParentLink(java.lang.String)
+    166:167:public void setResponseHeaders(com.google.api.client.http.HttpHeaders)
+    174:174:public com.google.api.client.http.HttpHeaders getResponseHeaders()
+com.google.api.services.drive.model.Permission:
+    private com.google.api.client.http.HttpHeaders responseHeaders
+    33:33:public Permission()
+    124:124:public java.lang.Boolean getWithLink()
+    132:133:public com.google.api.services.drive.model.Permission setWithLink(java.lang.Boolean)
+    141:141:public java.lang.String getKind()
+    149:150:public com.google.api.services.drive.model.Permission setKind(java.lang.String)
+    158:158:public java.lang.String getName()
+    166:167:public com.google.api.services.drive.model.Permission setName(java.lang.String)
+    175:175:public java.lang.String getValue()
+    183:184:public com.google.api.services.drive.model.Permission setValue(java.lang.String)
+    192:192:public java.lang.String getId()
+    200:201:public com.google.api.services.drive.model.Permission setId(java.lang.String)
+    209:209:public java.lang.String getAuthKey()
+    217:218:public com.google.api.services.drive.model.Permission setAuthKey(java.lang.String)
+    226:226:public java.lang.String getEtag()
+    234:235:public com.google.api.services.drive.model.Permission setEtag(java.lang.String)
+    243:243:public java.lang.String getRole()
+    251:252:public com.google.api.services.drive.model.Permission setRole(java.lang.String)
+    260:260:public java.lang.String getPhotoLink()
+    268:269:public com.google.api.services.drive.model.Permission setPhotoLink(java.lang.String)
+    277:277:public java.lang.String getType()
+    285:286:public com.google.api.services.drive.model.Permission setType(java.lang.String)
+    294:294:public java.util.List getAdditionalRoles()
+    302:303:public com.google.api.services.drive.model.Permission setAdditionalRoles(java.util.List)
+    311:311:public java.lang.String getSelfLink()
+    319:320:public com.google.api.services.drive.model.Permission setSelfLink(java.lang.String)
+    334:335:public void setResponseHeaders(com.google.api.client.http.HttpHeaders)
+    342:342:public com.google.api.client.http.HttpHeaders getResponseHeaders()
 com.google.api.services.drive.model.PermissionList
 com.google.api.services.drive.model.Revision
 com.google.api.services.drive.model.RevisionList
-com.google.api.services.drive.model.User
-com.google.api.services.drive.model.User$Picture
+com.google.api.services.drive.model.User:
+    private com.google.api.client.http.HttpHeaders responseHeaders
+    33:159:public User()
+    69:69:public com.google.api.services.drive.model.User$Picture getPicture()
+    77:78:public com.google.api.services.drive.model.User setPicture(com.google.api.services.drive.model.User$Picture)
+    86:86:public java.lang.String getKind()
+    94:95:public com.google.api.services.drive.model.User setKind(java.lang.String)
+    104:104:public java.lang.Boolean getIsAuthenticatedUser()
+    113:114:public com.google.api.services.drive.model.User setIsAuthenticatedUser(java.lang.Boolean)
+    122:122:public java.lang.String getDisplayName()
+    130:131:public com.google.api.services.drive.model.User setDisplayName(java.lang.String)
+    145:146:public void setResponseHeaders(com.google.api.client.http.HttpHeaders)
+    153:153:public com.google.api.client.http.HttpHeaders getResponseHeaders()
+com.google.api.services.drive.model.User$Picture:
+    159:159:public User$Picture()
+    173:173:public java.lang.String getUrl()
+    181:182:public com.google.api.services.drive.model.User$Picture setUrl(java.lang.String)
 com.google.common.annotations.Beta
 com.google.common.annotations.GwtCompatible
 com.google.common.annotations.GwtIncompatible
@@ -1007,7 +1759,8 @@ com.google.common.base.CharMatcher$9
 com.google.common.base.CharMatcher$And
 com.google.common.base.CharMatcher$LookupTable
 com.google.common.base.CharMatcher$Or
-com.google.common.base.Charsets
+com.google.common.base.Charsets:
+    29:29:private Charsets()
 com.google.common.base.Defaults
 com.google.common.base.Enums
 com.google.common.base.Enums$1
@@ -1045,7 +1798,14 @@ com.google.common.base.Joiner$1
 com.google.common.base.Joiner$2
 com.google.common.base.Joiner$3
 com.google.common.base.Joiner$MapJoiner
-com.google.common.base.Objects
+com.google.common.base.Objects:
+    35:35:private Objects()
+    70:70:public static varargs int hashCode(java.lang.Object[])
+    106:106:public static com.google.common.base.Objects$ToStringHelper toStringHelper(java.lang.Object)
+    120:120:public static com.google.common.base.Objects$ToStringHelper toStringHelper(java.lang.Class)
+    132:132:public static com.google.common.base.Objects$ToStringHelper toStringHelper(java.lang.String)
+    140:154:private static java.lang.String simpleName(java.lang.Class)
+    174:174:public static java.lang.Object firstNonNull(java.lang.Object,java.lang.Object)
 com.google.common.base.Objects$1
 com.google.common.base.Objects$ToStringHelper
 com.google.common.base.Optional
@@ -1056,7 +1816,18 @@ com.google.common.base.Optional$Present
 com.google.common.base.PairwiseEquivalence
 com.google.common.base.Platform
 com.google.common.base.Platform$1
-com.google.common.base.Preconditions
+com.google.common.base.Preconditions:
+    61:61:private Preconditions()
+    144:147:public static void checkState(boolean,java.lang.Object)
+    171:175:public static varargs void checkState(boolean,java.lang.String,java.lang.Object[])
+    280:280:public static int checkElementIndex(int,int)
+    300:303:public static int checkElementIndex(int,int,java.lang.String)
+    307:312:private static java.lang.String badElementIndex(int,int,java.lang.String)
+    330:330:public static int checkPositionIndex(int,int)
+    350:353:public static int checkPositionIndex(int,int,java.lang.String)
+    357:362:private static java.lang.String badPositionIndex(int,int,java.lang.String)
+    383:386:public static void checkPositionIndexes(int,int,int)
+    389:396:private static java.lang.String badPositionIndexes(int,int,int)
 com.google.common.base.Predicate
 com.google.common.base.Predicates
 com.google.common.base.Predicates$1
@@ -1089,7 +1860,16 @@ com.google.common.base.Splitter$SplittingIterator
 com.google.common.base.Splitter$Strategy
 com.google.common.base.Stopwatch
 com.google.common.base.Stopwatch$1
-com.google.common.base.Strings
+com.google.common.base.Strings:
+    39:39:private Strings()
+    48:48:public static java.lang.String nullToEmpty(java.lang.String)
+    59:59:public static java.lang.String emptyToNull(java.lang.String)
+    99:108:public static java.lang.String padStart(java.lang.String,int,char)
+    131:140:public static java.lang.String padEnd(java.lang.String,int,char)
+    155:178:public static java.lang.String repeat(java.lang.String,int)
+    191:202:public static java.lang.String commonPrefix(java.lang.CharSequence,java.lang.CharSequence)
+    215:228:public static java.lang.String commonSuffix(java.lang.CharSequence,java.lang.CharSequence)
+    237:237:static boolean validSurrogatePairAt(java.lang.CharSequence,int)
 com.google.common.base.Supplier
 com.google.common.base.Suppliers
 com.google.common.base.Suppliers$ExpiringMemoizingSupplier
@@ -2053,7 +2833,34 @@ com.google.common.io.AppendableWriter
 com.google.common.io.ByteArrayDataInput
 com.google.common.io.ByteArrayDataOutput
 com.google.common.io.ByteProcessor
-com.google.common.io.ByteStreams
+com.google.common.io.ByteStreams:
+    private static final int BUF_SIZE
+    51:51:private ByteStreams()
+    62:62:public static com.google.common.io.InputSupplier newInputStreamSupplier(byte[])
+    76:76:public static com.google.common.io.InputSupplier newInputStreamSupplier(byte[],int,int)
+    93:102:public static void write(byte[],com.google.common.io.OutputSupplier)
+    115:128:public static long copy(com.google.common.io.InputSupplier,com.google.common.io.OutputSupplier)
+    144:151:public static long copy(com.google.common.io.InputSupplier,java.io.OutputStream)
+    168:175:public static long copy(java.io.InputStream,com.google.common.io.OutputSupplier)
+    214:223:public static long copy(java.nio.channels.ReadableByteChannel,java.nio.channels.WritableByteChannel)
+    235:237:public static byte[] toByteArray(java.io.InputStream)
+    248:255:public static byte[] toByteArray(com.google.common.io.InputSupplier)
+    264:264:public static com.google.common.io.ByteArrayDataInput newDataInput(byte[])
+    275:276:public static com.google.common.io.ByteArrayDataInput newDataInput(byte[],int)
+    418:418:public static com.google.common.io.ByteArrayDataOutput newDataOutput()
+    428:429:public static com.google.common.io.ByteArrayDataOutput newDataOutput(int)
+    574:592:public static long length(com.google.common.io.InputSupplier)
+    603:626:public static boolean equal(com.google.common.io.InputSupplier,com.google.common.io.InputSupplier)
+    642:643:public static void readFully(java.io.InputStream,byte[])
+    661:664:public static void readFully(java.io.InputStream,byte[],int,int)
+    679:691:public static void skipFully(java.io.InputStream,long)
+    703:717:public static java.lang.Object readBytes(com.google.common.io.InputSupplier,com.google.common.io.ByteProcessor)
+    733:733:public static long getChecksum(com.google.common.io.InputSupplier,java.util.zip.Checksum)
+    761:761:public static byte[] getDigest(com.google.common.io.InputSupplier,java.security.MessageDigest)
+    801:812:public static int read(java.io.InputStream,byte[],int,int)
+    830:833:public static com.google.common.io.InputSupplier slice(com.google.common.io.InputSupplier,long,long)
+    866:866:public static com.google.common.io.InputSupplier join(java.lang.Iterable)
+    876:876:public static varargs com.google.common.io.InputSupplier join(com.google.common.io.InputSupplier[])
 com.google.common.io.ByteStreams$1
 com.google.common.io.ByteStreams$2
 com.google.common.io.ByteStreams$3
@@ -2061,7 +2868,25 @@ com.google.common.io.ByteStreams$4
 com.google.common.io.ByteStreams$5
 com.google.common.io.ByteStreams$ByteArrayDataInputStream
 com.google.common.io.ByteStreams$ByteArrayDataOutputStream
-com.google.common.io.CharStreams
+com.google.common.io.CharStreams:
+    private static final int BUF_SIZE
+    56:56:private CharStreams()
+    67:68:public static com.google.common.io.InputSupplier newReaderSupplier(java.lang.String)
+    86:88:public static com.google.common.io.InputSupplier newReaderSupplier(com.google.common.io.InputSupplier,java.nio.charset.Charset)
+    106:108:public static com.google.common.io.OutputSupplier newWriterSupplier(com.google.common.io.OutputSupplier,java.nio.charset.Charset)
+    126:135:public static void write(java.lang.CharSequence,com.google.common.io.OutputSupplier)
+    150:163:public static long copy(com.google.common.io.InputSupplier,com.google.common.io.OutputSupplier)
+    179:186:public static long copy(com.google.common.io.InputSupplier,java.lang.Appendable)
+    236:236:public static java.lang.String toString(com.google.common.io.InputSupplier)
+    262:269:private static java.lang.StringBuilder toStringBuilder(com.google.common.io.InputSupplier)
+    284:291:public static java.lang.String readFirstLine(com.google.common.io.InputSupplier)
+    306:313:public static java.util.List readLines(com.google.common.io.InputSupplier)
+    331:337:public static java.util.List readLines(java.lang.Readable)
+    352:366:public static java.lang.Object readLines(com.google.common.io.InputSupplier,com.google.common.io.LineProcessor)
+    386:386:public static com.google.common.io.InputSupplier join(java.lang.Iterable)
+    396:396:public static varargs com.google.common.io.InputSupplier join(com.google.common.io.InputSupplier[])
+    411:423:public static void skipFully(java.io.Reader,long)
+    436:439:public static java.io.Writer asWriter(java.lang.Appendable)
 com.google.common.io.CharStreams$1
 com.google.common.io.CharStreams$2
 com.google.common.io.CharStreams$3
@@ -2127,10 +2952,60 @@ com.google.common.primitives.Doubles$LexicographicalComparator
 com.google.common.primitives.Floats
 com.google.common.primitives.Floats$FloatArrayAsList
 com.google.common.primitives.Floats$LexicographicalComparator
-com.google.common.primitives.Ints
+com.google.common.primitives.Ints:
+    public static final int BYTES
+    public static final int MAX_POWER_OF_TWO
+    48:48:private Ints()
+    71:71:public static int hashCode(int)
+    83:85:public static int checkedCast(long)
+    97:103:public static int saturatedCast(long)
+    129:134:public static boolean contains(int[],int)
+    147:147:public static int indexOf(int[],int)
+    153:158:private static int indexOf(int[],int,int,int)
+    173:188:public static int indexOf(int[],int[])
+    201:201:public static int lastIndexOf(int[],int)
+    207:212:private static int lastIndexOf(int[],int,int,int)
+    224:231:public static varargs int min(int[])
+    243:250:public static varargs int max(int[])
+    263:273:public static varargs int[] concat(int[][])
+    289:289:public static byte[] toByteArray(int)
+    310:312:public static int fromByteArray(byte[])
+    324:324:public static int fromBytes(byte,byte,byte,byte)
+    345:347:public static int[] ensureCapacity(int[],int,int)
+    354:356:private static int[] copyOf(int[],int)
+    369:380:public static varargs java.lang.String join(java.lang.String,int[])
+    399:399:public static java.util.Comparator lexicographicalComparator()
+    433:444:public static int[] toArray(java.util.Collection)
+    462:465:public static varargs java.util.List asList(int[])
+    612:612:public static java.lang.Integer tryParse(java.lang.String)
+    47:47:static synthetic int access$000(int[],int,int,int)
+    47:47:static synthetic int access$100(int[],int,int,int)
 com.google.common.primitives.Ints$IntArrayAsList
 com.google.common.primitives.Ints$LexicographicalComparator
-com.google.common.primitives.Longs
+com.google.common.primitives.Longs:
+    public static final int BYTES
+    public static final long MAX_POWER_OF_TWO
+    45:45:private Longs()
+    99:104:public static boolean contains(long[],long)
+    117:117:public static int indexOf(long[],long)
+    123:128:private static int indexOf(long[],long,int,int)
+    143:158:public static int indexOf(long[],long[])
+    171:171:public static int lastIndexOf(long[],long)
+    177:182:private static int lastIndexOf(long[],long,int,int)
+    194:201:public static varargs long min(long[])
+    213:220:public static varargs long max(long[])
+    233:243:public static varargs long[] concat(long[][])
+    259:259:public static byte[] toByteArray(long)
+    285:287:public static long fromByteArray(byte[])
+    301:301:public static long fromBytes(byte,byte,byte,byte,byte,byte,byte,byte)
+    329:331:public static long[] ensureCapacity(long[],int,int)
+    338:340:private static long[] copyOf(long[],int)
+    353:364:public static varargs java.lang.String join(java.lang.String,long[])
+    384:384:public static java.util.Comparator lexicographicalComparator()
+    418:429:public static long[] toArray(java.util.Collection)
+    447:450:public static varargs java.util.List asList(long[])
+    44:44:static synthetic int access$000(long[],long,int,int)
+    44:44:static synthetic int access$100(long[],long,int,int)
 com.google.common.primitives.Longs$LexicographicalComparator
 com.google.common.primitives.Longs$LongArrayAsList
 com.google.common.primitives.Primitives
@@ -2144,11 +3019,45 @@ com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder
 com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$PureJavaComparator
 com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator
 com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator$1
-com.google.common.primitives.UnsignedInteger
-com.google.common.primitives.UnsignedInts
+com.google.common.primitives.UnsignedInteger:
+    66:68:public static com.google.common.primitives.UnsignedInteger valueOf(long)
+    78:81:public static com.google.common.primitives.UnsignedInteger valueOf(java.math.BigInteger)
+    111:112:public com.google.common.primitives.UnsignedInteger add(com.google.common.primitives.UnsignedInteger)
+    120:121:public com.google.common.primitives.UnsignedInteger subtract(com.google.common.primitives.UnsignedInteger)
+    130:131:public com.google.common.primitives.UnsignedInteger multiply(com.google.common.primitives.UnsignedInteger)
+    138:139:public com.google.common.primitives.UnsignedInteger divide(com.google.common.primitives.UnsignedInteger)
+    146:147:public com.google.common.primitives.UnsignedInteger remainder(com.google.common.primitives.UnsignedInteger)
+    192:192:public java.math.BigInteger bigIntegerValue()
+com.google.common.primitives.UnsignedInts:
+    static final long INT_MASK
+    48:48:private UnsignedInts()
+    83:91:public static varargs int min(int[])
+    103:111:public static varargs int max(int[])
+    123:134:public static varargs java.lang.String join(java.lang.String,int[])
+    150:150:public static java.util.Comparator lexicographicalComparator()
+    177:177:public static int divide(int,int)
+    189:189:public static int remainder(int,int)
+    200:200:public static int parseUnsignedInt(java.lang.String)
+    226:226:public static java.lang.String toString(int)
 com.google.common.primitives.UnsignedInts$LexicographicalComparator
-com.google.common.primitives.UnsignedLong
-com.google.common.primitives.UnsignedLongs
+com.google.common.primitives.UnsignedLong:
+    private static final long UNSIGNED_MASK
+    75:78:public static com.google.common.primitives.UnsignedLong valueOf(java.math.BigInteger)
+    109:110:public com.google.common.primitives.UnsignedLong add(com.google.common.primitives.UnsignedLong)
+    118:119:public com.google.common.primitives.UnsignedLong subtract(com.google.common.primitives.UnsignedLong)
+    127:128:public com.google.common.primitives.UnsignedLong multiply(com.google.common.primitives.UnsignedLong)
+    135:136:public com.google.common.primitives.UnsignedLong divide(com.google.common.primitives.UnsignedLong)
+    143:144:public com.google.common.primitives.UnsignedLong remainder(com.google.common.primitives.UnsignedLong)
+    199:203:public java.math.BigInteger bigIntegerValue()
+    240:240:public java.lang.String toString(int)
+com.google.common.primitives.UnsignedLongs:
+    public static final long MAX_VALUE
+    49:49:private UnsignedLongs()
+    84:92:public static varargs long min(long[])
+    104:112:public static varargs long max(long[])
+    124:135:public static varargs java.lang.String join(java.lang.String,long[])
+    152:152:public static java.util.Comparator lexicographicalComparator()
+    244:244:public static long parseUnsignedLong(java.lang.String)
 com.google.common.primitives.UnsignedLongs$LexicographicalComparator
 com.google.common.primitives.package-info
 com.google.common.util.concurrent.AbstractCheckedFuture
@@ -2310,7 +3219,8 @@ com.google.gson.internal.ConstructorConstructor$8
 com.google.gson.internal.Excluder
 com.google.gson.internal.Excluder$1
 com.google.gson.internal.GsonInternalAccess
-com.google.gson.internal.JsonReaderInternalAccess
+com.google.gson.internal.JsonReaderInternalAccess:
+    public abstract void promoteNameToValue(com.google.gson.stream.JsonReader)
 com.google.gson.internal.LazilyParsedNumber
 com.google.gson.internal.ObjectConstructor
 com.google.gson.internal.Pair
@@ -2384,15 +3294,33 @@ com.google.gson.internal.bind.TypeAdapters$8
 com.google.gson.internal.bind.TypeAdapters$9
 com.google.gson.internal.bind.TypeAdapters$EnumTypeAdapter
 com.google.gson.reflect.TypeToken
-com.google.gson.stream.JsonReader
-com.google.gson.stream.JsonReader$1
-com.google.gson.stream.JsonReader$2
-com.google.gson.stream.JsonScope
-com.google.gson.stream.JsonToken
-com.google.gson.stream.JsonWriter
-com.google.gson.stream.JsonWriter$1
-com.google.gson.stream.MalformedJsonException
-com.google.gson.stream.StringPool
+com.google.gson.stream.JsonReader:
+    private static final java.lang.String TRUE
+    private static final java.lang.String FALSE
+    298:298:public final boolean isLenient()
+    349:350:public boolean hasNext()
+    519:537:public double nextDouble()
+    551:575:public long nextLong()
+    589:613:public int nextInt()
+    190:190:static synthetic com.google.gson.stream.JsonToken access$000(com.google.gson.stream.JsonReader)
+    190:190:static synthetic int access$100(com.google.gson.stream.JsonReader)
+    190:190:static synthetic int access$200(com.google.gson.stream.JsonReader)
+    190:190:static synthetic java.lang.String access$302(com.google.gson.stream.JsonReader,java.lang.String)
+    190:190:static synthetic java.lang.String access$400(com.google.gson.stream.JsonReader)
+    190:190:static synthetic java.lang.String access$402(com.google.gson.stream.JsonReader,java.lang.String)
+    190:190:static synthetic com.google.gson.stream.JsonToken access$002(com.google.gson.stream.JsonReader,com.google.gson.stream.JsonToken)
+com.google.gson.stream.JsonReader$1:
+    1314:1326:public void promoteNameToValue(com.google.gson.stream.JsonReader)
+com.google.gson.stream.JsonWriter:
+    202:202:public boolean isLenient()
+    213:214:public final void setHtmlSafe(boolean)
+    221:221:public final boolean isHtmlSafe()
+    229:230:public final void setSerializeNulls(boolean)
+    237:237:public final boolean getSerializeNulls()
+com.google.gson.stream.MalformedJsonException:
+    private static final long serialVersionUID
+    33:37:public MalformedJsonException(java.lang.String,java.lang.Throwable)
+    39:43:public MalformedJsonException(java.lang.Throwable)
 javax.annotation.CheckForNull
 javax.annotation.CheckForSigned
 javax.annotation.CheckReturnValue
