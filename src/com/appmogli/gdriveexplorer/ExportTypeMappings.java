@@ -15,7 +15,9 @@ public class ExportTypeMappings {
 		mimeTypeToReadbleMap.put("application/vnd.openxmlformats-officedocument.wordprocessingml.document", "docx");
 		mimeTypeToReadbleMap.put("text/html", "html");
 		mimeTypeToReadbleMap.put("text/plain", "txt");
-		
+		mimeTypeToReadbleMap.put("application/vnd.openxmlformats-officedocument.presentationml.presentation", "pptx");
+		mimeTypeToReadbleMap.put("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "xlsx");
+		mimeTypeToReadbleMap.put("application/x-vnd.oasis.opendocument.spreadsheet", "xlsx");
 		for(String key : mimeTypeToReadbleMap.keySet()) {
 			readableMapToMimeType.put(mimeTypeToReadbleMap.get(key), key);
 		}

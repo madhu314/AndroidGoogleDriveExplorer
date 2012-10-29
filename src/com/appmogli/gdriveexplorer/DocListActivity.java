@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
@@ -33,6 +35,7 @@ import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.Drive.Files.Get;
 import com.google.api.services.drive.model.ChildReference;
 import com.google.api.services.drive.model.File;
+import com.google.api.services.drive.model.FileList;
 
 public class DocListActivity extends ListActivity {
 
@@ -66,6 +69,8 @@ public class DocListActivity extends ListActivity {
 						new GoogleKeyInitializer(ClientCredentials.KEY))
 				.build();
 		credential.setAccessToken(authToken);
+		Logger.getLogger("com.google.api.client").setLevel(Level.ALL);
+		
 		folderStack.add(rootFolderId);
 		listAdapter = new DocListAdapter(this);
 		getListView().setAdapter(listAdapter);
@@ -94,11 +99,15 @@ public class DocListActivity extends ListActivity {
 		builder.setTitle("Choose Format");
 		final Map<String, String> exportLinks = f.getExportLinks();
 		if (exportLinks != null) {
-			final String[] types = new String[exportLinks.size()];
-			int i = 0;
+			List<String> typesList = new ArrayList<String>();
 			for (String exportType : exportLinks.keySet()) {
-				types[i++] = ExportTypeMappings.getReadableString(exportType);
+				String mimeType = ExportTypeMappings.getReadableString(exportType);
+				if(mimeType != null) {
+					typesList.add(mimeType);
+				}
 			}
+			final String[] types = new String[typesList.size()];
+			typesList.toArray(types);
 
 			builder.setItems(types, new OnClickListener() {
 
@@ -140,6 +149,7 @@ public class DocListActivity extends ListActivity {
 			protected void onPreExecute() {
 				fileDownloadProgressDialog.setIndeterminate(false);
 				fileDownloadProgressDialog.setMax(100);
+				fileDownloadProgressDialog.show();
 				
 			};
 			@Override
@@ -225,26 +235,35 @@ public class DocListActivity extends ListActivity {
 					List<File> result = new ArrayList<File>();
 					com.google.api.services.drive.Drive.Children.List fileListRequest;
 					try {
-						fileListRequest = service.children().list(rootFolderId);
-						List<ChildReference> children = fileListRequest
-								.execute().getItems();
-						if (children != null) {
-							for (ChildReference child : children) {
-								Get fileRequest = service.files().get(
-										child.getId());
-								File f = fileRequest.execute();
-								Boolean trashed = f.getExplicitlyTrashed();
-								if (trashed == null) {
-									trashed = false;
-								}
-								if (f != null && !trashed) {
-									result.add(f);
-								}
-
-							}
+//						fileListRequest = service.children().list(rootFolderId);
+//						List<ChildReference> children = fileListRequest
+//								.execute().getItems();
+//						if (children != null) {
+//							for (ChildReference child : children) {
+//								Get fileRequest = service.files().get(
+//										child.getId());
+//								File f = fileRequest.execute();
+//								Boolean trashed = f.getExplicitlyTrashed();
+//								if (trashed == null) {
+//									trashed = false;
+//								}
+//								if (f != null && !trashed) {
+//									result.add(f);
+//								}
+//
+//							}
+//							rootToFilesMap.put(rootFolderId, result);
+//							return result;
+//
+//						}
+						
+						com.google.api.services.drive.Drive.Files.List list = service.files().list();
+						list.setQ("\"" + rootFolderId + "\"" + " in parents");
+						FileList fileList = list.execute();
+						result = fileList.getItems();
+						if(result != null) {
 							rootToFilesMap.put(rootFolderId, result);
 							return result;
-
 						}
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
